@@ -14,9 +14,44 @@
       <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//BoardType/Classic"/>
       <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//BoardType/FogOfWar"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ass2.ecore#//PlayerColor">
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PlayerColor/WHITE"/>
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PlayerColor/BLACK"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ass2.ecore#//PieceType">
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Pawn"/>
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/King"/>
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Queen"/>
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Bishop"/>
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Rook"/>
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Knight"/>
+    </genEnums>
     <genClasses ecoreClass="ass2.ecore#//Board">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Board/boardSize"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Board/boardType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Board/whitePieces"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Board/blackPieces"/>
+    </genClasses>
+    <genClasses ecoreClass="ass2.ecore#//Game">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ass2.ecore#//Game/board"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ass2.ecore#//Game/lobby"/>
+    </genClasses>
+    <genClasses ecoreClass="ass2.ecore#//Lobby">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Lobby/lobbyID"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Lobby/playerOne"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Lobby/playerTwo"/>
+    </genClasses>
+    <genClasses ecoreClass="ass2.ecore#//Player">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Player/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Player/color"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Player/pieces"/>
+    </genClasses>
+    <genClasses ecoreClass="ass2.ecore#//ChessPiece">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/pieceColor"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//ChessPiece/player"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

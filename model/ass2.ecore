@@ -7,9 +7,54 @@
         defaultValueLiteral="8"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="boardType" ordered="false"
         lowerBound="1" eType="#//BoardType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="whitePieces" lowerBound="1"
+        upperBound="16" eType="#//ChessPiece"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="blackPieces" lowerBound="1"
+        upperBound="16" eType="#//ChessPiece"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="BoardType">
     <eLiterals name="Classic"/>
     <eLiterals name="FogOfWar" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Game">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="board" lowerBound="1" eType="#//Board"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lobby" lowerBound="1" eType="#//Lobby"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lobby">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lobbyID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="playerOne" lowerBound="1"
+        eType="#//Player" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="playerTwo" lowerBound="1"
+        eType="#//Player" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Player">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" lowerBound="1" eType="#//PlayerColor"
+        changeable="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pieces" lowerBound="1"
+        upperBound="16" eType="#//ChessPiece" eOpposite="#//ChessPiece/player"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChessPiece">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PieceType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pieceColor" lowerBound="1"
+        eType="#//PlayerColor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="player" lowerBound="1"
+        eType="#//Player" eOpposite="#//Player/pieces"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PlayerColor">
+    <eLiterals name="WHITE"/>
+    <eLiterals name="BLACK" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PieceType">
+    <eLiterals name="Pawn" literal="Pawn"/>
+    <eLiterals name="King" value="1" literal="King"/>
+    <eLiterals name="Queen" value="2" literal="Queen"/>
+    <eLiterals name="Bishop" value="3" literal="Bishop"/>
+    <eLiterals name="Rook" value="4" literal="Rook"/>
+    <eLiterals name="Knight" value="5" literal="Knight"/>
   </eClassifiers>
 </ecore:EPackage>

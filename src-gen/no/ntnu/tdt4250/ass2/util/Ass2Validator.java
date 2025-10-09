@@ -3,6 +3,8 @@
 package no.ntnu.tdt4250.ass2.util;
 
 import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
 
 import no.ntnu.tdt4250.ass2.*;
 
@@ -224,7 +226,32 @@ public class Ass2Validator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		boolean valid = true;
+		
+		// Can be worked iterated on
+		Set<String> savedCoordinates = new HashSet<>();
+		
+		for (ChessPiece piece : board.getBlackPieces()) {
+			String stringedPos = "x" + piece.getX() + "y" + piece.getY();
+			if (savedCoordinates.contains(stringedPos)) {
+				valid = false;
+				break;
+			}
+			
+			savedCoordinates.add(stringedPos);
+		}
+		
+		for (ChessPiece piece : board.getWhitePieces()) {
+			String stringedPos = "x" + piece.getX() + "y" + piece.getY();
+			if (savedCoordinates.contains(stringedPos)) {
+				valid = false;
+				break;
+			}
+			
+			savedCoordinates.add(stringedPos);
+		}
+		
+		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
 						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
@@ -285,7 +312,13 @@ public class Ass2Validator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		boolean valid = true;
+		
+		if (lobby.getPlayerOne().getColor() == lobby.getPlayerTwo().getColor()) {
+			valid = false;
+		}
+		
+		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0,
 						"_UI_GenericConstraint_diagnostic",
@@ -346,7 +379,13 @@ public class Ass2Validator extends EObjectValidator {
 		// -> specify the condition that violates the constraint
 		// -> verify the diagnostic details, including severity, code, and message
 		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
+		boolean valid = true;
+		
+		if (chessPiece.getPieceColor() != chessPiece.getPlayer().getColor()) {
+			valid = false;
+		}
+		
+		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
 						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",

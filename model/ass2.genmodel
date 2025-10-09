@@ -18,19 +18,15 @@
       <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PlayerColor/WHITE"/>
       <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PlayerColor/BLACK"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ass2.ecore#//PieceType">
-      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Pawn"/>
-      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/King"/>
-      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Queen"/>
-      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Bishop"/>
-      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Rook"/>
-      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//PieceType/Knight"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ass2.ecore#//AbilityType">
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//AbilityType/Passive"/>
+      <genEnumLiterals ecoreEnumLiteral="ass2.ecore#//AbilityType/Active"/>
     </genEnums>
     <genClasses ecoreClass="ass2.ecore#//Board">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Board/boardSize"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Board/boardType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Board/whitePieces"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Board/blackPieces"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Board/whitePieces"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Board/blackPieces"/>
     </genClasses>
     <genClasses ecoreClass="ass2.ecore#//Game">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ass2.ecore#//Game/board"/>
@@ -47,11 +43,31 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Player/pieces"/>
     </genClasses>
     <genClasses ecoreClass="ass2.ecore#//ChessPiece">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/y"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/pieceColor"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//ChessPiece/player"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//ChessPiece/ability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//ChessPiece/moves"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//ChessPiece/pieceFlags"/>
+    </genClasses>
+    <genClasses ecoreClass="ass2.ecore#//Ability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Ability/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Ability/newAttribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Ability/coolDownCounter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Ability/coolDownStartNumber"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Ability/flags"/>
+    </genClasses>
+    <genClasses ecoreClass="ass2.ecore#//MoveDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/moveX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/moveY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/isInfinite"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/canJump"/>
+    </genClasses>
+    <genClasses ecoreClass="ass2.ecore#//Flags">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Flags/flagName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Flags/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

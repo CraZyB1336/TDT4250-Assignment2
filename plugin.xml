@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ass2 -->
+      <package
+            uri="http://www.ntnu.no/tdt4250/ass2"
+            class="no.ntnu.tdt4250.ass2.Ass2Package"
+            genModel="model/ass2.genmodel"/>
+   </extension>
+
+</plugin>

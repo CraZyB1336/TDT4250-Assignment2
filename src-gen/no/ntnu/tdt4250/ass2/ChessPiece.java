@@ -22,11 +22,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.tdt4250.ass2.ChessPiece#getAbility <em>Ability</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.ChessPiece#getName <em>Name</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.ChessPiece#getMoves <em>Moves</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.ass2.ChessPiece#getPieceFlags <em>Piece Flags</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.ass2.Ass2Package#getChessPiece()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PlayerColorMustBeSameAsPlayer'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='PieceColorMustBeSameAsPlayer'"
  * @generated
  */
 public interface ChessPiece extends EObject {
@@ -178,17 +177,5 @@ public interface ChessPiece extends EObject {
 	 * @generated
 	 */
 	EList<MoveDefinition> getMoves();
-
-	/**
-	 * Returns the value of the '<em><b>Piece Flags</b></em>' containment reference list.
-	 * The list contents are of type {@link no.ntnu.tdt4250.ass2.Flags}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Piece Flags</em>' containment reference list.
-	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getChessPiece_PieceFlags()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Flags> getPieceFlags();
 
 } // ChessPiece

@@ -70,8 +70,6 @@ public class Ass2FactoryImpl extends EFactoryImpl implements Ass2Factory {
 			return createAbility();
 		case Ass2Package.MOVE_DEFINITION:
 			return createMoveDefinition();
-		case Ass2Package.FLAGS:
-			return createFlags();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -190,17 +188,6 @@ public class Ass2FactoryImpl extends EFactoryImpl implements Ass2Factory {
 	public MoveDefinition createMoveDefinition() {
 		MoveDefinitionImpl moveDefinition = new MoveDefinitionImpl();
 		return moveDefinition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Flags createFlags() {
-		FlagsImpl flags = new FlagsImpl();
-		return flags;
 	}
 
 	/**

@@ -2,25 +2,16 @@
  */
 package no.ntnu.tdt4250.ass2.impl;
 
-import java.util.Collection;
-
 import no.ntnu.tdt4250.ass2.Ability;
 import no.ntnu.tdt4250.ass2.AbilityType;
 import no.ntnu.tdt4250.ass2.Ass2Package;
 
-import no.ntnu.tdt4250.ass2.Flags;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +25,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#getNewAttribute <em>New Attribute</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#getCoolDownCounter <em>Cool Down Counter</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#getCoolDownStartNumber <em>Cool Down Start Number</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#getFlags <em>Flags</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#isTriggerOnCaptureOnly <em>Trigger On Capture Only</em>}</li>
  * </ul>
  *
  * @generated
@@ -121,14 +112,24 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 	protected int coolDownStartNumber = COOL_DOWN_START_NUMBER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getFlags() <em>Flags</em>}' containment reference list.
+	 * The default value of the '{@link #isTriggerOnCaptureOnly() <em>Trigger On Capture Only</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFlags()
+	 * @see #isTriggerOnCaptureOnly()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Flags> flags;
+	protected static final boolean TRIGGER_ON_CAPTURE_ONLY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isTriggerOnCaptureOnly() <em>Trigger On Capture Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isTriggerOnCaptureOnly()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean triggerOnCaptureOnly = TRIGGER_ON_CAPTURE_ONLY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -250,11 +251,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 	 * @generated
 	 */
 	@Override
-	public EList<Flags> getFlags() {
-		if (flags == null) {
-			flags = new EObjectContainmentEList<Flags>(Flags.class, this, Ass2Package.ABILITY__FLAGS);
-		}
-		return flags;
+	public boolean isTriggerOnCaptureOnly() {
+		return triggerOnCaptureOnly;
 	}
 
 	/**
@@ -263,12 +261,12 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case Ass2Package.ABILITY__FLAGS:
-			return ((InternalEList<?>) getFlags()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setTriggerOnCaptureOnly(boolean newTriggerOnCaptureOnly) {
+		boolean oldTriggerOnCaptureOnly = triggerOnCaptureOnly;
+		triggerOnCaptureOnly = newTriggerOnCaptureOnly;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Ass2Package.ABILITY__TRIGGER_ON_CAPTURE_ONLY,
+					oldTriggerOnCaptureOnly, triggerOnCaptureOnly));
 	}
 
 	/**
@@ -287,8 +285,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 			return getCoolDownCounter();
 		case Ass2Package.ABILITY__COOL_DOWN_START_NUMBER:
 			return getCoolDownStartNumber();
-		case Ass2Package.ABILITY__FLAGS:
-			return getFlags();
+		case Ass2Package.ABILITY__TRIGGER_ON_CAPTURE_ONLY:
+			return isTriggerOnCaptureOnly();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,7 +296,6 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -314,9 +311,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 		case Ass2Package.ABILITY__COOL_DOWN_START_NUMBER:
 			setCoolDownStartNumber((Integer) newValue);
 			return;
-		case Ass2Package.ABILITY__FLAGS:
-			getFlags().clear();
-			getFlags().addAll((Collection<? extends Flags>) newValue);
+		case Ass2Package.ABILITY__TRIGGER_ON_CAPTURE_ONLY:
+			setTriggerOnCaptureOnly((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -342,8 +338,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 		case Ass2Package.ABILITY__COOL_DOWN_START_NUMBER:
 			setCoolDownStartNumber(COOL_DOWN_START_NUMBER_EDEFAULT);
 			return;
-		case Ass2Package.ABILITY__FLAGS:
-			getFlags().clear();
+		case Ass2Package.ABILITY__TRIGGER_ON_CAPTURE_ONLY:
+			setTriggerOnCaptureOnly(TRIGGER_ON_CAPTURE_ONLY_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -365,8 +361,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 			return coolDownCounter != COOL_DOWN_COUNTER_EDEFAULT;
 		case Ass2Package.ABILITY__COOL_DOWN_START_NUMBER:
 			return coolDownStartNumber != COOL_DOWN_START_NUMBER_EDEFAULT;
-		case Ass2Package.ABILITY__FLAGS:
-			return flags != null && !flags.isEmpty();
+		case Ass2Package.ABILITY__TRIGGER_ON_CAPTURE_ONLY:
+			return triggerOnCaptureOnly != TRIGGER_ON_CAPTURE_ONLY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -390,6 +386,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 		result.append(coolDownCounter);
 		result.append(", coolDownStartNumber: ");
 		result.append(coolDownStartNumber);
+		result.append(", triggerOnCaptureOnly: ");
+		result.append(triggerOnCaptureOnly);
 		result.append(')');
 		return result.toString();
 	}

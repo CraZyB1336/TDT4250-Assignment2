@@ -9,7 +9,6 @@ import no.ntnu.tdt4250.ass2.Ass2Package;
 import no.ntnu.tdt4250.ass2.Board;
 import no.ntnu.tdt4250.ass2.BoardType;
 import no.ntnu.tdt4250.ass2.ChessPiece;
-import no.ntnu.tdt4250.ass2.Flags;
 import no.ntnu.tdt4250.ass2.Game;
 import no.ntnu.tdt4250.ass2.Lobby;
 import no.ntnu.tdt4250.ass2.MoveDefinition;
@@ -82,13 +81,6 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	private EClass moveDefinitionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass flagsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -429,16 +421,6 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
-	public EReference getChessPiece_PieceFlags() {
-		return (EReference) chessPieceEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getAbility() {
 		return abilityEClass;
 	}
@@ -489,8 +471,8 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
-	public EReference getAbility_Flags() {
-		return (EReference) abilityEClass.getEStructuralFeatures().get(4);
+	public EAttribute getAbility_TriggerOnCaptureOnly() {
+		return (EAttribute) abilityEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -549,8 +531,8 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
-	public EClass getFlags() {
-		return flagsEClass;
+	public EAttribute getMoveDefinition_CanCapture() {
+		return (EAttribute) moveDefinitionEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -559,8 +541,8 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFlags_FlagName() {
-		return (EAttribute) flagsEClass.getEStructuralFeatures().get(0);
+	public EAttribute getMoveDefinition_CanMoveOnly() {
+		return (EAttribute) moveDefinitionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -569,8 +551,8 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFlags_Value() {
-		return (EAttribute) flagsEClass.getEStructuralFeatures().get(1);
+	public EAttribute getMoveDefinition_FirstMoveOnly() {
+		return (EAttribute) moveDefinitionEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -661,24 +643,22 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		createEReference(chessPieceEClass, CHESS_PIECE__ABILITY);
 		createEAttribute(chessPieceEClass, CHESS_PIECE__NAME);
 		createEReference(chessPieceEClass, CHESS_PIECE__MOVES);
-		createEReference(chessPieceEClass, CHESS_PIECE__PIECE_FLAGS);
 
 		abilityEClass = createEClass(ABILITY);
 		createEAttribute(abilityEClass, ABILITY__NAME);
 		createEAttribute(abilityEClass, ABILITY__NEW_ATTRIBUTE);
 		createEAttribute(abilityEClass, ABILITY__COOL_DOWN_COUNTER);
 		createEAttribute(abilityEClass, ABILITY__COOL_DOWN_START_NUMBER);
-		createEReference(abilityEClass, ABILITY__FLAGS);
+		createEAttribute(abilityEClass, ABILITY__TRIGGER_ON_CAPTURE_ONLY);
 
 		moveDefinitionEClass = createEClass(MOVE_DEFINITION);
 		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__MOVE_X);
 		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__MOVE_Y);
 		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__IS_INFINITE);
 		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__CAN_JUMP);
-
-		flagsEClass = createEClass(FLAGS);
-		createEAttribute(flagsEClass, FLAGS__FLAG_NAME);
-		createEAttribute(flagsEClass, FLAGS__VALUE);
+		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__CAN_CAPTURE);
+		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__CAN_MOVE_ONLY);
+		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__FIRST_MOVE_ONLY);
 
 		// Create enums
 		boardTypeEEnum = createEEnum(BOARD_TYPE);
@@ -775,12 +755,9 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		initEReference(getChessPiece_Moves(), this.getMoveDefinition(), null, "moves", null, 1, -1, ChessPiece.class,
 				IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				IS_DERIVED, IS_ORDERED);
-		initEReference(getChessPiece_PieceFlags(), this.getFlags(), null, "pieceFlags", null, 0, -1, ChessPiece.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abilityEClass, Ability.class, "Ability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbility_Name(), ecorePackage.getEString(), "name", null, 0, 1, Ability.class, !IS_TRANSIENT,
+		initEAttribute(getAbility_Name(), ecorePackage.getEString(), "name", null, 1, 1, Ability.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbility_NewAttribute(), this.getAbilityType(), "newAttribute", null, 1, 1, Ability.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -790,9 +767,9 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		initEAttribute(getAbility_CoolDownStartNumber(), ecorePackage.getEInt(), "coolDownStartNumber", null, 1, 1,
 				Ability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEReference(getAbility_Flags(), this.getFlags(), null, "flags", null, 0, -1, Ability.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
+		initEAttribute(getAbility_TriggerOnCaptureOnly(), ecorePackage.getEBoolean(), "triggerOnCaptureOnly", null, 1,
+				1, Ability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(moveDefinitionEClass, MoveDefinition.class, "MoveDefinition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -806,12 +783,15 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		initEAttribute(getMoveDefinition_CanJump(), ecorePackage.getEBoolean(), "canJump", "false", 1, 1,
 				MoveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(flagsEClass, Flags.class, "Flags", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFlags_FlagName(), ecorePackage.getEString(), "flagName", null, 1, 1, Flags.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFlags_Value(), ecorePackage.getEBoolean(), "value", null, 1, 1, Flags.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMoveDefinition_CanCapture(), ecorePackage.getEBoolean(), "canCapture", null, 1, 1,
+				MoveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMoveDefinition_CanMoveOnly(), ecorePackage.getEBoolean(), "canMoveOnly", null, 1, 1,
+				MoveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMoveDefinition_FirstMoveOnly(), ecorePackage.getEBoolean(), "firstMoveOnly", null, 1, 1,
+				MoveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(boardTypeEEnum, BoardType.class, "BoardType");
@@ -846,7 +826,7 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 				"BlackPiecesMustBeColorBlack WhitePiecesMustBeColorWhite AllChessPiecesMustBeOnUniqueSquares" });
 		addAnnotation(lobbyEClass, source,
 				new String[] { "constraints", "PlayerOneAndPlayerTwoMustHaveOppositeColor" });
-		addAnnotation(chessPieceEClass, source, new String[] { "constraints", "PlayerColorMustBeSameAsPlayer" });
+		addAnnotation(chessPieceEClass, source, new String[] { "constraints", "PieceColorMustBeSameAsPlayer" });
 	}
 
 } //Ass2PackageImpl

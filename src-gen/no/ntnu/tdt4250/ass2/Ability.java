@@ -2,8 +2,6 @@
  */
 package no.ntnu.tdt4250.ass2;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -19,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.tdt4250.ass2.Ability#getNewAttribute <em>New Attribute</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.Ability#getCoolDownCounter <em>Cool Down Counter</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.Ability#getCoolDownStartNumber <em>Cool Down Start Number</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.ass2.Ability#getFlags <em>Flags</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.Ability#isTriggerOnCaptureOnly <em>Trigger On Capture Only</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.ass2.Ass2Package#getAbility()
@@ -34,7 +32,7 @@ public interface Ability extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getAbility_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
@@ -119,15 +117,25 @@ public interface Ability extends EObject {
 	void setCoolDownStartNumber(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Flags</b></em>' containment reference list.
-	 * The list contents are of type {@link no.ntnu.tdt4250.ass2.Flags}.
+	 * Returns the value of the '<em><b>Trigger On Capture Only</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Flags</em>' containment reference list.
-	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getAbility_Flags()
-	 * @model containment="true"
+	 * @return the value of the '<em>Trigger On Capture Only</em>' attribute.
+	 * @see #setTriggerOnCaptureOnly(boolean)
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getAbility_TriggerOnCaptureOnly()
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Flags> getFlags();
+	boolean isTriggerOnCaptureOnly();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.tdt4250.ass2.Ability#isTriggerOnCaptureOnly <em>Trigger On Capture Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Trigger On Capture Only</em>' attribute.
+	 * @see #isTriggerOnCaptureOnly()
+	 * @generated
+	 */
+	void setTriggerOnCaptureOnly(boolean value);
 
 } // Ability

@@ -85,15 +85,6 @@ public interface Ass2Factory extends EFactory {
 	MoveDefinition createMoveDefinition();
 
 	/**
-	 * Returns a new object of class '<em>Flags</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Flags</em>'.
-	 * @generated
-	 */
-	Flags createFlags();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

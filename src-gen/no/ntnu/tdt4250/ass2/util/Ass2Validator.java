@@ -4,6 +4,7 @@ package no.ntnu.tdt4250.ass2.util;
 
 import java.util.Map;
 import java.util.HashSet;
+
 import no.ntnu.tdt4250.ass2.*;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -101,8 +102,6 @@ public class Ass2Validator extends EObjectValidator {
 			return validateAbility((Ability) value, diagnostics, context);
 		case Ass2Package.MOVE_DEFINITION:
 			return validateMoveDefinition((MoveDefinition) value, diagnostics, context);
-		case Ass2Package.FLAGS:
-			return validateFlags((Flags) value, diagnostics, context);
 		case Ass2Package.BOARD_TYPE:
 			return validateBoardType((BoardType) value, diagnostics, context);
 		case Ass2Package.PLAYER_COLOR:
@@ -210,22 +209,23 @@ public class Ass2Validator extends EObjectValidator {
 	public boolean validateBoard_AllChessPiecesMustBeOnUniqueSquares(Board board, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		boolean valid = true;
-		
 		HashSet<String> takenPositions = new HashSet<>();
 		
-		// Check black piece positions
+		// Check black positions
 		for (ChessPiece piece : board.getBlackPieces()) {
-			String posStr = "x" + piece.getX() + "y" + piece.getY();
-			if (takenPositions.contains(posStr)) {
+			String positionAsString = "x" + piece.getX() + "y" + piece.getY();
+			
+			if (takenPositions.contains(positionAsString)) {
 				valid = false;
 				break;
 			}
 		}
 		
-		// Check white piece positions
+		// Check white positions
 		for (ChessPiece piece : board.getWhitePieces()) {
-			String posStr = "x" + piece.getX() + "y" + piece.getY();
-			if (takenPositions.contains(posStr)) {
+			String positionAsString = "x" + piece.getX() + "y" + piece.getY();
+			
+			if (takenPositions.contains(positionAsString)) {
 				valid = false;
 				break;
 			}
@@ -293,7 +293,6 @@ public class Ass2Validator extends EObjectValidator {
 			valid = false;
 		}
 		
-		
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0,
@@ -339,16 +338,16 @@ public class Ass2Validator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validate_EveryMapEntryUnique(chessPiece, diagnostics, context);
 		if (result || diagnostics != null)
-			result &= validateChessPiece_PlayerColorMustBeSameAsPlayer(chessPiece, diagnostics, context);
+			result &= validateChessPiece_PieceColorMustBeSameAsPlayer(chessPiece, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * Validates the PlayerColorMustBeSameAsPlayer constraint of '<em>Chess Piece</em>'.
+	 * Validates the PieceColorMustBeSameAsPlayer constraint of '<em>Chess Piece</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 */
-	public boolean validateChessPiece_PlayerColorMustBeSameAsPlayer(ChessPiece chessPiece, DiagnosticChain diagnostics,
+	public boolean validateChessPiece_PieceColorMustBeSameAsPlayer(ChessPiece chessPiece, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		boolean valid = true;
 		
@@ -360,7 +359,7 @@ public class Ass2Validator extends EObjectValidator {
 			if (diagnostics != null) {
 				diagnostics.add(
 						createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic",
-								new Object[] { "PlayerColorMustBeSameAsPlayer", getObjectLabel(chessPiece, context) },
+								new Object[] { "PieceColorMustBeSameAsPlayer", getObjectLabel(chessPiece, context) },
 								new Object[] { chessPiece }, context));
 			}
 			return false;
@@ -385,15 +384,6 @@ public class Ass2Validator extends EObjectValidator {
 	public boolean validateMoveDefinition(MoveDefinition moveDefinition, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(moveDefinition, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateFlags(Flags flags, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(flags, diagnostics, context);
 	}
 
 	/**

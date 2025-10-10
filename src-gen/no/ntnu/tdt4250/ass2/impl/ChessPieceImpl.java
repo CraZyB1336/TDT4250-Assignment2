@@ -7,7 +7,6 @@ import java.util.Collection;
 import no.ntnu.tdt4250.ass2.Ability;
 import no.ntnu.tdt4250.ass2.Ass2Package;
 import no.ntnu.tdt4250.ass2.ChessPiece;
-import no.ntnu.tdt4250.ass2.Flags;
 import no.ntnu.tdt4250.ass2.MoveDefinition;
 import no.ntnu.tdt4250.ass2.Player;
 import no.ntnu.tdt4250.ass2.PlayerColor;
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -40,7 +39,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.ChessPieceImpl#getAbility <em>Ability</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.ChessPieceImpl#getName <em>Name</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.ChessPieceImpl#getMoves <em>Moves</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.ass2.impl.ChessPieceImpl#getPieceFlags <em>Piece Flags</em>}</li>
  * </ul>
  *
  * @generated
@@ -145,16 +143,6 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getPieceFlags() <em>Piece Flags</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPieceFlags()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Flags> pieceFlags;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -391,6 +379,7 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public EList<MoveDefinition> getMoves() {
@@ -399,19 +388,6 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
 		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Flags> getPieceFlags() {
-		if (pieceFlags == null) {
-			pieceFlags = new EObjectContainmentEList<Flags>(Flags.class, this, Ass2Package.CHESS_PIECE__PIECE_FLAGS);
-		}
-		return pieceFlags;
 	}
 
 	/**
@@ -444,8 +420,6 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 			return basicSetAbility(null, msgs);
 		case Ass2Package.CHESS_PIECE__MOVES:
 			return ((InternalEList<?>) getMoves()).basicRemove(otherEnd, msgs);
-		case Ass2Package.CHESS_PIECE__PIECE_FLAGS:
-			return ((InternalEList<?>) getPieceFlags()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -474,8 +448,6 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 			return getName();
 		case Ass2Package.CHESS_PIECE__MOVES:
 			return getMoves();
-		case Ass2Package.CHESS_PIECE__PIECE_FLAGS:
-			return getPieceFlags();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -511,10 +483,6 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 			getMoves().clear();
 			getMoves().addAll((Collection<? extends MoveDefinition>) newValue);
 			return;
-		case Ass2Package.CHESS_PIECE__PIECE_FLAGS:
-			getPieceFlags().clear();
-			getPieceFlags().addAll((Collection<? extends Flags>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -548,9 +516,6 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 		case Ass2Package.CHESS_PIECE__MOVES:
 			getMoves().clear();
 			return;
-		case Ass2Package.CHESS_PIECE__PIECE_FLAGS:
-			getPieceFlags().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -577,8 +542,6 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case Ass2Package.CHESS_PIECE__MOVES:
 			return !getMoves().isEmpty();
-		case Ass2Package.CHESS_PIECE__PIECE_FLAGS:
-			return pieceFlags != null && !pieceFlags.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

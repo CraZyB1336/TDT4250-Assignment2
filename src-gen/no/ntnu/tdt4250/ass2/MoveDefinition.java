@@ -17,6 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#getMoveY <em>Move Y</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#isIsInfinite <em>Is Infinite</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanJump <em>Can Jump</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanCapture <em>Can Capture</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanMoveOnly <em>Can Move Only</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#isFirstMoveOnly <em>First Move Only</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.ass2.Ass2Package#getMoveDefinition()
@@ -113,5 +116,71 @@ public interface MoveDefinition extends EObject {
 	 * @generated
 	 */
 	void setCanJump(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Can Capture</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Can Capture</em>' attribute.
+	 * @see #setCanCapture(boolean)
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getMoveDefinition_CanCapture()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isCanCapture();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanCapture <em>Can Capture</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Can Capture</em>' attribute.
+	 * @see #isCanCapture()
+	 * @generated
+	 */
+	void setCanCapture(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Can Move Only</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Can Move Only</em>' attribute.
+	 * @see #setCanMoveOnly(boolean)
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getMoveDefinition_CanMoveOnly()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isCanMoveOnly();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanMoveOnly <em>Can Move Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Can Move Only</em>' attribute.
+	 * @see #isCanMoveOnly()
+	 * @generated
+	 */
+	void setCanMoveOnly(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>First Move Only</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>First Move Only</em>' attribute.
+	 * @see #setFirstMoveOnly(boolean)
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getMoveDefinition_FirstMoveOnly()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isFirstMoveOnly();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.tdt4250.ass2.MoveDefinition#isFirstMoveOnly <em>First Move Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>First Move Only</em>' attribute.
+	 * @see #isFirstMoveOnly()
+	 * @generated
+	 */
+	void setFirstMoveOnly(boolean value);
 
 } // MoveDefinition

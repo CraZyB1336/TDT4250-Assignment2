@@ -351,22 +351,13 @@ public interface Ass2Package extends EPackage {
 	int CHESS_PIECE__MOVES = 6;
 
 	/**
-	 * The feature id for the '<em><b>Piece Flags</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHESS_PIECE__PIECE_FLAGS = 7;
-
-	/**
 	 * The number of structural features of the '<em>Chess Piece</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHESS_PIECE_FEATURE_COUNT = 8;
+	int CHESS_PIECE_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Chess Piece</em>' class.
@@ -424,13 +415,13 @@ public interface Ass2Package extends EPackage {
 	int ABILITY__COOL_DOWN_START_NUMBER = 3;
 
 	/**
-	 * The feature id for the '<em><b>Flags</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Trigger On Capture Only</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABILITY__FLAGS = 4;
+	int ABILITY__TRIGGER_ON_CAPTURE_ONLY = 4;
 
 	/**
 	 * The number of structural features of the '<em>Ability</em>' class.
@@ -497,13 +488,40 @@ public interface Ass2Package extends EPackage {
 	int MOVE_DEFINITION__CAN_JUMP = 3;
 
 	/**
+	 * The feature id for the '<em><b>Can Capture</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_DEFINITION__CAN_CAPTURE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Can Move Only</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_DEFINITION__CAN_MOVE_ONLY = 5;
+
+	/**
+	 * The feature id for the '<em><b>First Move Only</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_DEFINITION__FIRST_MOVE_ONLY = 6;
+
+	/**
 	 * The number of structural features of the '<em>Move Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MOVE_DEFINITION_FEATURE_COUNT = 4;
+	int MOVE_DEFINITION_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Move Definition</em>' class.
@@ -515,52 +533,6 @@ public interface Ass2Package extends EPackage {
 	int MOVE_DEFINITION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link no.ntnu.tdt4250.ass2.impl.FlagsImpl <em>Flags</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see no.ntnu.tdt4250.ass2.impl.FlagsImpl
-	 * @see no.ntnu.tdt4250.ass2.impl.Ass2PackageImpl#getFlags()
-	 * @generated
-	 */
-	int FLAGS = 7;
-
-	/**
-	 * The feature id for the '<em><b>Flag Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAGS__FLAG_NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAGS__VALUE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Flags</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAGS_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Flags</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLAGS_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link no.ntnu.tdt4250.ass2.BoardType <em>Board Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -568,7 +540,7 @@ public interface Ass2Package extends EPackage {
 	 * @see no.ntnu.tdt4250.ass2.impl.Ass2PackageImpl#getBoardType()
 	 * @generated
 	 */
-	int BOARD_TYPE = 8;
+	int BOARD_TYPE = 7;
 
 	/**
 	 * The meta object id for the '{@link no.ntnu.tdt4250.ass2.PlayerColor <em>Player Color</em>}' enum.
@@ -578,7 +550,7 @@ public interface Ass2Package extends EPackage {
 	 * @see no.ntnu.tdt4250.ass2.impl.Ass2PackageImpl#getPlayerColor()
 	 * @generated
 	 */
-	int PLAYER_COLOR = 9;
+	int PLAYER_COLOR = 8;
 
 	/**
 	 * The meta object id for the '{@link no.ntnu.tdt4250.ass2.AbilityType <em>Ability Type</em>}' enum.
@@ -588,7 +560,7 @@ public interface Ass2Package extends EPackage {
 	 * @see no.ntnu.tdt4250.ass2.impl.Ass2PackageImpl#getAbilityType()
 	 * @generated
 	 */
-	int ABILITY_TYPE = 10;
+	int ABILITY_TYPE = 9;
 
 	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.ass2.Board <em>Board</em>}'.
@@ -850,17 +822,6 @@ public interface Ass2Package extends EPackage {
 	EReference getChessPiece_Moves();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.ass2.ChessPiece#getPieceFlags <em>Piece Flags</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Piece Flags</em>'.
-	 * @see no.ntnu.tdt4250.ass2.ChessPiece#getPieceFlags()
-	 * @see #getChessPiece()
-	 * @generated
-	 */
-	EReference getChessPiece_PieceFlags();
-
-	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.ass2.Ability <em>Ability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -915,15 +876,15 @@ public interface Ass2Package extends EPackage {
 	EAttribute getAbility_CoolDownStartNumber();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.ass2.Ability#getFlags <em>Flags</em>}'.
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.Ability#isTriggerOnCaptureOnly <em>Trigger On Capture Only</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Flags</em>'.
-	 * @see no.ntnu.tdt4250.ass2.Ability#getFlags()
+	 * @return the meta object for the attribute '<em>Trigger On Capture Only</em>'.
+	 * @see no.ntnu.tdt4250.ass2.Ability#isTriggerOnCaptureOnly()
 	 * @see #getAbility()
 	 * @generated
 	 */
-	EReference getAbility_Flags();
+	EAttribute getAbility_TriggerOnCaptureOnly();
 
 	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.ass2.MoveDefinition <em>Move Definition</em>}'.
@@ -980,36 +941,37 @@ public interface Ass2Package extends EPackage {
 	EAttribute getMoveDefinition_CanJump();
 
 	/**
-	 * Returns the meta object for class '{@link no.ntnu.tdt4250.ass2.Flags <em>Flags</em>}'.
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanCapture <em>Can Capture</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Flags</em>'.
-	 * @see no.ntnu.tdt4250.ass2.Flags
+	 * @return the meta object for the attribute '<em>Can Capture</em>'.
+	 * @see no.ntnu.tdt4250.ass2.MoveDefinition#isCanCapture()
+	 * @see #getMoveDefinition()
 	 * @generated
 	 */
-	EClass getFlags();
+	EAttribute getMoveDefinition_CanCapture();
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.Flags#getFlagName <em>Flag Name</em>}'.
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanMoveOnly <em>Can Move Only</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Flag Name</em>'.
-	 * @see no.ntnu.tdt4250.ass2.Flags#getFlagName()
-	 * @see #getFlags()
+	 * @return the meta object for the attribute '<em>Can Move Only</em>'.
+	 * @see no.ntnu.tdt4250.ass2.MoveDefinition#isCanMoveOnly()
+	 * @see #getMoveDefinition()
 	 * @generated
 	 */
-	EAttribute getFlags_FlagName();
+	EAttribute getMoveDefinition_CanMoveOnly();
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.Flags#isValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.MoveDefinition#isFirstMoveOnly <em>First Move Only</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see no.ntnu.tdt4250.ass2.Flags#isValue()
-	 * @see #getFlags()
+	 * @return the meta object for the attribute '<em>First Move Only</em>'.
+	 * @see no.ntnu.tdt4250.ass2.MoveDefinition#isFirstMoveOnly()
+	 * @see #getMoveDefinition()
 	 * @generated
 	 */
-	EAttribute getFlags_Value();
+	EAttribute getMoveDefinition_FirstMoveOnly();
 
 	/**
 	 * Returns the meta object for enum '{@link no.ntnu.tdt4250.ass2.BoardType <em>Board Type</em>}'.
@@ -1267,14 +1229,6 @@ public interface Ass2Package extends EPackage {
 		EReference CHESS_PIECE__MOVES = eINSTANCE.getChessPiece_Moves();
 
 		/**
-		 * The meta object literal for the '<em><b>Piece Flags</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CHESS_PIECE__PIECE_FLAGS = eINSTANCE.getChessPiece_PieceFlags();
-
-		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl <em>Ability</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1317,12 +1271,12 @@ public interface Ass2Package extends EPackage {
 		EAttribute ABILITY__COOL_DOWN_START_NUMBER = eINSTANCE.getAbility_CoolDownStartNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Flags</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Trigger On Capture Only</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ABILITY__FLAGS = eINSTANCE.getAbility_Flags();
+		EAttribute ABILITY__TRIGGER_ON_CAPTURE_ONLY = eINSTANCE.getAbility_TriggerOnCaptureOnly();
 
 		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.ass2.impl.MoveDefinitionImpl <em>Move Definition</em>}' class.
@@ -1367,30 +1321,28 @@ public interface Ass2Package extends EPackage {
 		EAttribute MOVE_DEFINITION__CAN_JUMP = eINSTANCE.getMoveDefinition_CanJump();
 
 		/**
-		 * The meta object literal for the '{@link no.ntnu.tdt4250.ass2.impl.FlagsImpl <em>Flags</em>}' class.
+		 * The meta object literal for the '<em><b>Can Capture</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see no.ntnu.tdt4250.ass2.impl.FlagsImpl
-		 * @see no.ntnu.tdt4250.ass2.impl.Ass2PackageImpl#getFlags()
 		 * @generated
 		 */
-		EClass FLAGS = eINSTANCE.getFlags();
+		EAttribute MOVE_DEFINITION__CAN_CAPTURE = eINSTANCE.getMoveDefinition_CanCapture();
 
 		/**
-		 * The meta object literal for the '<em><b>Flag Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Can Move Only</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FLAGS__FLAG_NAME = eINSTANCE.getFlags_FlagName();
+		EAttribute MOVE_DEFINITION__CAN_MOVE_ONLY = eINSTANCE.getMoveDefinition_CanMoveOnly();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>First Move Only</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FLAGS__VALUE = eINSTANCE.getFlags_Value();
+		EAttribute MOVE_DEFINITION__FIRST_MOVE_ONLY = eINSTANCE.getMoveDefinition_FirstMoveOnly();
 
 		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.ass2.BoardType <em>Board Type</em>}' enum.

@@ -414,11 +414,11 @@ public class Ass2Validator extends EObjectValidator {
 	public boolean validateMoveDefinition_IsMoveOnlyAndCanCaptureCantBothBeTrue(MoveDefinition moveDefinition,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean valid = true;
-		
+
 		if (moveDefinition.isCanCapture() && moveDefinition.isCanMoveOnly()) {
 			valid = false;
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(createDiagnostic(

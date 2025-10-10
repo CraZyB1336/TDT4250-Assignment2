@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.tdt4250.ass2.Board#getBoardType <em>Board Type</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.Board#getWhitePieces <em>White Pieces</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.Board#getBlackPieces <em>Black Pieces</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.Board#getTotalPieces <em>Total Pieces</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.ass2.Ass2Package#getBoard()
@@ -97,5 +98,16 @@ public interface Board extends EObject {
 	 * @generated
 	 */
 	EList<ChessPiece> getBlackPieces();
+
+	/**
+	 * Returns the value of the '<em><b>Total Pieces</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Total Pieces</em>' attribute.
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getBoard_TotalPieces()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	int getTotalPieces();
 
 } // Board

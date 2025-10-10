@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.tdt4250.ass2.ChessPiece#getAbility <em>Ability</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.ChessPiece#getName <em>Name</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.ChessPiece#getMoves <em>Moves</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.ChessPiece#getStringPosition <em>String Position</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.ass2.Ass2Package#getChessPiece()
@@ -177,5 +178,16 @@ public interface ChessPiece extends EObject {
 	 * @generated
 	 */
 	EList<MoveDefinition> getMoves();
+
+	/**
+	 * Returns the value of the '<em><b>String Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>String Position</em>' attribute.
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getChessPiece_StringPosition()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	String getStringPosition();
 
 } // ChessPiece

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.tdt4250.ass2.Player#getName <em>Name</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.Player#getColor <em>Color</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.Player#getPieces <em>Pieces</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.Player#getPiecesLeft <em>Pieces Left</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.ass2.Ass2Package#getPlayer()
@@ -85,5 +86,16 @@ public interface Player extends EObject {
 	 * @generated
 	 */
 	EList<ChessPiece> getPieces();
+
+	/**
+	 * Returns the value of the '<em><b>Pieces Left</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pieces Left</em>' attribute.
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getPlayer_PiecesLeft()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	int getPiecesLeft();
 
 } // Player

@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.BoardImpl#getBoardType <em>Board Type</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.BoardImpl#getWhitePieces <em>White Pieces</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.BoardImpl#getBlackPieces <em>Black Pieces</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.impl.BoardImpl#getTotalPieces <em>Total Pieces</em>}</li>
  * </ul>
  *
  * @generated
@@ -99,6 +100,16 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 	 * @ordered
 	 */
 	protected EList<ChessPiece> blackPieces;
+
+	/**
+	 * The default value of the '{@link #getTotalPieces() <em>Total Pieces</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTotalPieces()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int TOTAL_PIECES_EDEFAULT = 0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -198,6 +209,15 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	@Override
+	public int getTotalPieces() {
+		return this.getBlackPieces().size() + this.getWhitePieces().size();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -227,6 +247,8 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 			return getWhitePieces();
 		case Ass2Package.BOARD__BLACK_PIECES:
 			return getBlackPieces();
+		case Ass2Package.BOARD__TOTAL_PIECES:
+			return getTotalPieces();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,6 +320,8 @@ public class BoardImpl extends MinimalEObjectImpl.Container implements Board {
 			return whitePieces != null && !whitePieces.isEmpty();
 		case Ass2Package.BOARD__BLACK_PIECES:
 			return blackPieces != null && !blackPieces.isEmpty();
+		case Ass2Package.BOARD__TOTAL_PIECES:
+			return getTotalPieces() != TOTAL_PIECES_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

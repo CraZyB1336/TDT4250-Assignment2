@@ -40,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.ChessPieceImpl#getAbility <em>Ability</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.ChessPieceImpl#getName <em>Name</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.ChessPieceImpl#getMoves <em>Moves</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.impl.ChessPieceImpl#getStringPosition <em>String Position</em>}</li>
  * </ul>
  *
  * @generated
@@ -154,6 +155,16 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 	 * @ordered
 	 */
 	protected EList<MoveDefinition> moves;
+
+	/**
+	 * The default value of the '{@link #getStringPosition() <em>String Position</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStringPosition()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String STRING_POSITION_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -404,6 +415,15 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	@Override
+	public String getStringPosition() {
+		return "x" + this.getX() + "y" + this.getY();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -459,6 +479,8 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 			return getName();
 		case Ass2Package.CHESS_PIECE__MOVES:
 			return getMoves();
+		case Ass2Package.CHESS_PIECE__STRING_POSITION:
+			return getStringPosition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -553,6 +575,9 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case Ass2Package.CHESS_PIECE__MOVES:
 			return moves != null && !moves.isEmpty();
+		case Ass2Package.CHESS_PIECE__STRING_POSITION:
+			return STRING_POSITION_EDEFAULT == null ? getStringPosition() != null
+					: !STRING_POSITION_EDEFAULT.equals(getStringPosition());
 		}
 		return super.eIsSet(featureID);
 	}

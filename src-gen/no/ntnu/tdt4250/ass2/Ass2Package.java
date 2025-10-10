@@ -104,13 +104,22 @@ public interface Ass2Package extends EPackage {
 	int BOARD__BLACK_PIECES = 3;
 
 	/**
+	 * The feature id for the '<em><b>Total Pieces</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOARD__TOTAL_PIECES = 4;
+
+	/**
 	 * The number of structural features of the '<em>Board</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOARD_FEATURE_COUNT = 4;
+	int BOARD_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Board</em>' class.
@@ -260,13 +269,22 @@ public interface Ass2Package extends EPackage {
 	int PLAYER__PIECES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Pieces Left</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLAYER__PIECES_LEFT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Player</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLAYER_FEATURE_COUNT = 3;
+	int PLAYER_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Player</em>' class.
@@ -351,13 +369,22 @@ public interface Ass2Package extends EPackage {
 	int CHESS_PIECE__MOVES = 6;
 
 	/**
+	 * The feature id for the '<em><b>String Position</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHESS_PIECE__STRING_POSITION = 7;
+
+	/**
 	 * The number of structural features of the '<em>Chess Piece</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHESS_PIECE_FEATURE_COUNT = 7;
+	int CHESS_PIECE_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Chess Piece</em>' class.
@@ -388,13 +415,13 @@ public interface Ass2Package extends EPackage {
 	int ABILITY__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>New Attribute</b></em>' attribute.
+	 * The feature id for the '<em><b>Ability Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABILITY__NEW_ATTRIBUTE = 1;
+	int ABILITY__ABILITY_TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Cool Down Counter</b></em>' attribute.
@@ -424,13 +451,22 @@ public interface Ass2Package extends EPackage {
 	int ABILITY__TRIGGER_ON_CAPTURE_ONLY = 4;
 
 	/**
+	 * The feature id for the '<em><b>Is On Cooldown</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABILITY__IS_ON_COOLDOWN = 5;
+
+	/**
 	 * The number of structural features of the '<em>Ability</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABILITY_FEATURE_COUNT = 5;
+	int ABILITY_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Ability</em>' class.
@@ -626,6 +662,17 @@ public interface Ass2Package extends EPackage {
 	EReference getBoard_BlackPieces();
 
 	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.Board#getTotalPieces <em>Total Pieces</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total Pieces</em>'.
+	 * @see no.ntnu.tdt4250.ass2.Board#getTotalPieces()
+	 * @see #getBoard()
+	 * @generated
+	 */
+	EAttribute getBoard_TotalPieces();
+
+	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.ass2.Game <em>Game</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -744,6 +791,17 @@ public interface Ass2Package extends EPackage {
 	EReference getPlayer_Pieces();
 
 	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.Player#getPiecesLeft <em>Pieces Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pieces Left</em>'.
+	 * @see no.ntnu.tdt4250.ass2.Player#getPiecesLeft()
+	 * @see #getPlayer()
+	 * @generated
+	 */
+	EAttribute getPlayer_PiecesLeft();
+
+	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.ass2.ChessPiece <em>Chess Piece</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -831,6 +889,17 @@ public interface Ass2Package extends EPackage {
 	EReference getChessPiece_Moves();
 
 	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.ChessPiece#getStringPosition <em>String Position</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>String Position</em>'.
+	 * @see no.ntnu.tdt4250.ass2.ChessPiece#getStringPosition()
+	 * @see #getChessPiece()
+	 * @generated
+	 */
+	EAttribute getChessPiece_StringPosition();
+
+	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.ass2.Ability <em>Ability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -852,15 +921,15 @@ public interface Ass2Package extends EPackage {
 	EAttribute getAbility_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.Ability#getNewAttribute <em>New Attribute</em>}'.
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.Ability#getAbilityType <em>Ability Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>New Attribute</em>'.
-	 * @see no.ntnu.tdt4250.ass2.Ability#getNewAttribute()
+	 * @return the meta object for the attribute '<em>Ability Type</em>'.
+	 * @see no.ntnu.tdt4250.ass2.Ability#getAbilityType()
 	 * @see #getAbility()
 	 * @generated
 	 */
-	EAttribute getAbility_NewAttribute();
+	EAttribute getAbility_AbilityType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.Ability#getCoolDownCounter <em>Cool Down Counter</em>}'.
@@ -894,6 +963,17 @@ public interface Ass2Package extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAbility_TriggerOnCaptureOnly();
+
+	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.Ability#isIsOnCooldown <em>Is On Cooldown</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is On Cooldown</em>'.
+	 * @see no.ntnu.tdt4250.ass2.Ability#isIsOnCooldown()
+	 * @see #getAbility()
+	 * @generated
+	 */
+	EAttribute getAbility_IsOnCooldown();
 
 	/**
 	 * Returns the meta object for class '{@link no.ntnu.tdt4250.ass2.MoveDefinition <em>Move Definition</em>}'.
@@ -1089,6 +1169,14 @@ public interface Ass2Package extends EPackage {
 		EReference BOARD__BLACK_PIECES = eINSTANCE.getBoard_BlackPieces();
 
 		/**
+		 * The meta object literal for the '<em><b>Total Pieces</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOARD__TOTAL_PIECES = eINSTANCE.getBoard_TotalPieces();
+
+		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.ass2.impl.GameImpl <em>Game</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1183,6 +1271,14 @@ public interface Ass2Package extends EPackage {
 		EReference PLAYER__PIECES = eINSTANCE.getPlayer_Pieces();
 
 		/**
+		 * The meta object literal for the '<em><b>Pieces Left</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PLAYER__PIECES_LEFT = eINSTANCE.getPlayer_PiecesLeft();
+
+		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.ass2.impl.ChessPieceImpl <em>Chess Piece</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1249,6 +1345,14 @@ public interface Ass2Package extends EPackage {
 		EReference CHESS_PIECE__MOVES = eINSTANCE.getChessPiece_Moves();
 
 		/**
+		 * The meta object literal for the '<em><b>String Position</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHESS_PIECE__STRING_POSITION = eINSTANCE.getChessPiece_StringPosition();
+
+		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl <em>Ability</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1267,12 +1371,12 @@ public interface Ass2Package extends EPackage {
 		EAttribute ABILITY__NAME = eINSTANCE.getAbility_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>New Attribute</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Ability Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ABILITY__NEW_ATTRIBUTE = eINSTANCE.getAbility_NewAttribute();
+		EAttribute ABILITY__ABILITY_TYPE = eINSTANCE.getAbility_AbilityType();
 
 		/**
 		 * The meta object literal for the '<em><b>Cool Down Counter</b></em>' attribute feature.
@@ -1297,6 +1401,14 @@ public interface Ass2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute ABILITY__TRIGGER_ON_CAPTURE_ONLY = eINSTANCE.getAbility_TriggerOnCaptureOnly();
+
+		/**
+		 * The meta object literal for the '<em><b>Is On Cooldown</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABILITY__IS_ON_COOLDOWN = eINSTANCE.getAbility_IsOnCooldown();
 
 		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.ass2.impl.MoveDefinitionImpl <em>Move Definition</em>}' class.

@@ -231,6 +231,16 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getBoard_TotalPieces() {
+		return (EAttribute) boardEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getGame() {
 		return gameEClass;
 	}
@@ -341,6 +351,16 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getPlayer_PiecesLeft() {
+		return (EAttribute) playerEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getChessPiece() {
 		return chessPieceEClass;
 	}
@@ -421,6 +441,16 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getChessPiece_StringPosition() {
+		return (EAttribute) chessPieceEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAbility() {
 		return abilityEClass;
 	}
@@ -441,7 +471,7 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAbility_NewAttribute() {
+	public EAttribute getAbility_AbilityType() {
 		return (EAttribute) abilityEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -473,6 +503,16 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	@Override
 	public EAttribute getAbility_TriggerOnCaptureOnly() {
 		return (EAttribute) abilityEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAbility_IsOnCooldown() {
+		return (EAttribute) abilityEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -630,6 +670,7 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		createEAttribute(boardEClass, BOARD__BOARD_TYPE);
 		createEReference(boardEClass, BOARD__WHITE_PIECES);
 		createEReference(boardEClass, BOARD__BLACK_PIECES);
+		createEAttribute(boardEClass, BOARD__TOTAL_PIECES);
 
 		gameEClass = createEClass(GAME);
 		createEReference(gameEClass, GAME__BOARD);
@@ -644,6 +685,7 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		createEAttribute(playerEClass, PLAYER__NAME);
 		createEAttribute(playerEClass, PLAYER__COLOR);
 		createEReference(playerEClass, PLAYER__PIECES);
+		createEAttribute(playerEClass, PLAYER__PIECES_LEFT);
 
 		chessPieceEClass = createEClass(CHESS_PIECE);
 		createEAttribute(chessPieceEClass, CHESS_PIECE__X);
@@ -653,13 +695,15 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		createEReference(chessPieceEClass, CHESS_PIECE__ABILITY);
 		createEAttribute(chessPieceEClass, CHESS_PIECE__NAME);
 		createEReference(chessPieceEClass, CHESS_PIECE__MOVES);
+		createEAttribute(chessPieceEClass, CHESS_PIECE__STRING_POSITION);
 
 		abilityEClass = createEClass(ABILITY);
 		createEAttribute(abilityEClass, ABILITY__NAME);
-		createEAttribute(abilityEClass, ABILITY__NEW_ATTRIBUTE);
+		createEAttribute(abilityEClass, ABILITY__ABILITY_TYPE);
 		createEAttribute(abilityEClass, ABILITY__COOL_DOWN_COUNTER);
 		createEAttribute(abilityEClass, ABILITY__COOL_DOWN_START_NUMBER);
 		createEAttribute(abilityEClass, ABILITY__TRIGGER_ON_CAPTURE_ONLY);
+		createEAttribute(abilityEClass, ABILITY__IS_ON_COOLDOWN);
 
 		moveDefinitionEClass = createEClass(MOVE_DEFINITION);
 		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__MOVE_X);
@@ -719,6 +763,8 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		initEReference(getBoard_BlackPieces(), this.getChessPiece(), null, "blackPieces", null, 1, 16, Board.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBoard_TotalPieces(), ecorePackage.getEInt(), "totalPieces", null, 0, 1, Board.class,
+				IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(gameEClass, Game.class, "Game", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGame_Board(), this.getBoard(), null, "board", null, 1, 1, Game.class, !IS_TRANSIENT,
@@ -746,6 +792,8 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		initEReference(getPlayer_Pieces(), this.getChessPiece(), this.getChessPiece_Player(), "pieces", null, 0, 16,
 				Player.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPlayer_PiecesLeft(), ecorePackage.getEInt(), "piecesLeft", null, 0, 1, Player.class,
+				IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(chessPieceEClass, ChessPiece.class, "ChessPiece", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -766,11 +814,14 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		initEReference(getChessPiece_Moves(), this.getMoveDefinition(), null, "moves", null, 1, -1, ChessPiece.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChessPiece_StringPosition(), ecorePackage.getEString(), "stringPosition", null, 0, 1,
+				ChessPiece.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				IS_DERIVED, IS_ORDERED);
 
 		initEClass(abilityEClass, Ability.class, "Ability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbility_Name(), ecorePackage.getEString(), "name", null, 1, 1, Ability.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbility_NewAttribute(), this.getAbilityType(), "newAttribute", null, 1, 1, Ability.class,
+		initEAttribute(getAbility_AbilityType(), this.getAbilityType(), "abilityType", null, 1, 1, Ability.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAbility_CoolDownCounter(), ecorePackage.getEInt(), "coolDownCounter", null, 1, 1,
 				Ability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
@@ -781,6 +832,8 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		initEAttribute(getAbility_TriggerOnCaptureOnly(), ecorePackage.getEBoolean(), "triggerOnCaptureOnly", null, 1,
 				1, Ability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbility_IsOnCooldown(), ecorePackage.getEBoolean(), "isOnCooldown", null, 0, 1, Ability.class,
+				IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(moveDefinitionEClass, MoveDefinition.class, "MoveDefinition", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

@@ -22,10 +22,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#getName <em>Name</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#getNewAttribute <em>New Attribute</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#getAbilityType <em>Ability Type</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#getCoolDownCounter <em>Cool Down Counter</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#getCoolDownStartNumber <em>Cool Down Start Number</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#isTriggerOnCaptureOnly <em>Trigger On Capture Only</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.impl.AbilityImpl#isIsOnCooldown <em>Is On Cooldown</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,24 +53,24 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getNewAttribute() <em>New Attribute</em>}' attribute.
+	 * The default value of the '{@link #getAbilityType() <em>Ability Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNewAttribute()
+	 * @see #getAbilityType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final AbilityType NEW_ATTRIBUTE_EDEFAULT = AbilityType.PASSIVE;
+	protected static final AbilityType ABILITY_TYPE_EDEFAULT = AbilityType.PASSIVE;
 
 	/**
-	 * The cached value of the '{@link #getNewAttribute() <em>New Attribute</em>}' attribute.
+	 * The cached value of the '{@link #getAbilityType() <em>Ability Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNewAttribute()
+	 * @see #getAbilityType()
 	 * @generated
 	 * @ordered
 	 */
-	protected AbilityType newAttribute = NEW_ATTRIBUTE_EDEFAULT;
+	protected AbilityType abilityType = ABILITY_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCoolDownCounter() <em>Cool Down Counter</em>}' attribute.
@@ -132,6 +133,16 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 	protected boolean triggerOnCaptureOnly = TRIGGER_ON_CAPTURE_ONLY_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isIsOnCooldown() <em>Is On Cooldown</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsOnCooldown()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_ON_COOLDOWN_EDEFAULT = false;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -179,8 +190,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 	 * @generated
 	 */
 	@Override
-	public AbilityType getNewAttribute() {
-		return newAttribute;
+	public AbilityType getAbilityType() {
+		return abilityType;
 	}
 
 	/**
@@ -189,12 +200,12 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 	 * @generated
 	 */
 	@Override
-	public void setNewAttribute(AbilityType newNewAttribute) {
-		AbilityType oldNewAttribute = newAttribute;
-		newAttribute = newNewAttribute == null ? NEW_ATTRIBUTE_EDEFAULT : newNewAttribute;
+	public void setAbilityType(AbilityType newAbilityType) {
+		AbilityType oldAbilityType = abilityType;
+		abilityType = newAbilityType == null ? ABILITY_TYPE_EDEFAULT : newAbilityType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Ass2Package.ABILITY__NEW_ATTRIBUTE, oldNewAttribute,
-					newAttribute));
+			eNotify(new ENotificationImpl(this, Notification.SET, Ass2Package.ABILITY__ABILITY_TYPE, oldAbilityType,
+					abilityType));
 	}
 
 	/**
@@ -272,6 +283,15 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	@Override
+	public boolean isIsOnCooldown() {
+		return this.getCoolDownCounter() > 0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -279,14 +299,16 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 		switch (featureID) {
 		case Ass2Package.ABILITY__NAME:
 			return getName();
-		case Ass2Package.ABILITY__NEW_ATTRIBUTE:
-			return getNewAttribute();
+		case Ass2Package.ABILITY__ABILITY_TYPE:
+			return getAbilityType();
 		case Ass2Package.ABILITY__COOL_DOWN_COUNTER:
 			return getCoolDownCounter();
 		case Ass2Package.ABILITY__COOL_DOWN_START_NUMBER:
 			return getCoolDownStartNumber();
 		case Ass2Package.ABILITY__TRIGGER_ON_CAPTURE_ONLY:
 			return isTriggerOnCaptureOnly();
+		case Ass2Package.ABILITY__IS_ON_COOLDOWN:
+			return isIsOnCooldown();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -302,8 +324,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 		case Ass2Package.ABILITY__NAME:
 			setName((String) newValue);
 			return;
-		case Ass2Package.ABILITY__NEW_ATTRIBUTE:
-			setNewAttribute((AbilityType) newValue);
+		case Ass2Package.ABILITY__ABILITY_TYPE:
+			setAbilityType((AbilityType) newValue);
 			return;
 		case Ass2Package.ABILITY__COOL_DOWN_COUNTER:
 			setCoolDownCounter((Integer) newValue);
@@ -329,8 +351,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 		case Ass2Package.ABILITY__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case Ass2Package.ABILITY__NEW_ATTRIBUTE:
-			setNewAttribute(NEW_ATTRIBUTE_EDEFAULT);
+		case Ass2Package.ABILITY__ABILITY_TYPE:
+			setAbilityType(ABILITY_TYPE_EDEFAULT);
 			return;
 		case Ass2Package.ABILITY__COOL_DOWN_COUNTER:
 			setCoolDownCounter(COOL_DOWN_COUNTER_EDEFAULT);
@@ -355,14 +377,16 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 		switch (featureID) {
 		case Ass2Package.ABILITY__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case Ass2Package.ABILITY__NEW_ATTRIBUTE:
-			return newAttribute != NEW_ATTRIBUTE_EDEFAULT;
+		case Ass2Package.ABILITY__ABILITY_TYPE:
+			return abilityType != ABILITY_TYPE_EDEFAULT;
 		case Ass2Package.ABILITY__COOL_DOWN_COUNTER:
 			return coolDownCounter != COOL_DOWN_COUNTER_EDEFAULT;
 		case Ass2Package.ABILITY__COOL_DOWN_START_NUMBER:
 			return coolDownStartNumber != COOL_DOWN_START_NUMBER_EDEFAULT;
 		case Ass2Package.ABILITY__TRIGGER_ON_CAPTURE_ONLY:
 			return triggerOnCaptureOnly != TRIGGER_ON_CAPTURE_ONLY_EDEFAULT;
+		case Ass2Package.ABILITY__IS_ON_COOLDOWN:
+			return isIsOnCooldown() != IS_ON_COOLDOWN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -380,8 +404,8 @@ public class AbilityImpl extends MinimalEObjectImpl.Container implements Ability
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", newAttribute: ");
-		result.append(newAttribute);
+		result.append(", abilityType: ");
+		result.append(abilityType);
 		result.append(", coolDownCounter: ");
 		result.append(coolDownCounter);
 		result.append(", coolDownStartNumber: ");

@@ -213,7 +213,7 @@ public class Ass2Validator extends EObjectValidator {
 
 		// Check black positions
 		for (ChessPiece piece : board.getBlackPieces()) {
-			String positionAsString = "x" + piece.getX() + "y" + piece.getY();
+			String positionAsString = piece.getStringPosition();
 
 			if (takenPositions.contains(positionAsString)) {
 				valid = false;
@@ -444,11 +444,11 @@ public class Ass2Validator extends EObjectValidator {
 	public boolean validateMoveDefinition_IsCanCaptureMustBeTrueIfIsCanCaptureOnlyIsTrue(MoveDefinition moveDefinition,
 			DiagnosticChain diagnostics, Map<Object, Object> context) {
 		boolean valid = true;
-		
+
 		if (moveDefinition.isCanCaptureOnly() && !moveDefinition.isCanCapture()) {
 			valid = false;
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(

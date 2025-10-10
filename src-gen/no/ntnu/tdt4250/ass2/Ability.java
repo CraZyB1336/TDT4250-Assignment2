@@ -14,10 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link no.ntnu.tdt4250.ass2.Ability#getName <em>Name</em>}</li>
- *   <li>{@link no.ntnu.tdt4250.ass2.Ability#getNewAttribute <em>New Attribute</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.Ability#getAbilityType <em>Ability Type</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.Ability#getCoolDownCounter <em>Cool Down Counter</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.Ability#getCoolDownStartNumber <em>Cool Down Start Number</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.Ability#isTriggerOnCaptureOnly <em>Trigger On Capture Only</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.Ability#isIsOnCooldown <em>Is On Cooldown</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.ass2.Ass2Package#getAbility()
@@ -48,29 +49,29 @@ public interface Ability extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>New Attribute</b></em>' attribute.
+	 * Returns the value of the '<em><b>Ability Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link no.ntnu.tdt4250.ass2.AbilityType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>New Attribute</em>' attribute.
+	 * @return the value of the '<em>Ability Type</em>' attribute.
 	 * @see no.ntnu.tdt4250.ass2.AbilityType
-	 * @see #setNewAttribute(AbilityType)
-	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getAbility_NewAttribute()
+	 * @see #setAbilityType(AbilityType)
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getAbility_AbilityType()
 	 * @model required="true"
 	 * @generated
 	 */
-	AbilityType getNewAttribute();
+	AbilityType getAbilityType();
 
 	/**
-	 * Sets the value of the '{@link no.ntnu.tdt4250.ass2.Ability#getNewAttribute <em>New Attribute</em>}' attribute.
+	 * Sets the value of the '{@link no.ntnu.tdt4250.ass2.Ability#getAbilityType <em>Ability Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>New Attribute</em>' attribute.
+	 * @param value the new value of the '<em>Ability Type</em>' attribute.
 	 * @see no.ntnu.tdt4250.ass2.AbilityType
-	 * @see #getNewAttribute()
+	 * @see #getAbilityType()
 	 * @generated
 	 */
-	void setNewAttribute(AbilityType value);
+	void setAbilityType(AbilityType value);
 
 	/**
 	 * Returns the value of the '<em><b>Cool Down Counter</b></em>' attribute.
@@ -137,5 +138,16 @@ public interface Ability extends EObject {
 	 * @generated
 	 */
 	void setTriggerOnCaptureOnly(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Is On Cooldown</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is On Cooldown</em>' attribute.
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getAbility_IsOnCooldown()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 * @generated
+	 */
+	boolean isIsOnCooldown();
 
 } // Ability

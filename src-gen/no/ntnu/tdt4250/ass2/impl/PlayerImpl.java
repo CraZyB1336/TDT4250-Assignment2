@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.PlayerImpl#getName <em>Name</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.PlayerImpl#getColor <em>Color</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.PlayerImpl#getPieces <em>Pieces</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.impl.PlayerImpl#getPiecesLeft <em>Pieces Left</em>}</li>
  * </ul>
  *
  * @generated
@@ -88,6 +89,16 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 	 * @ordered
 	 */
 	protected EList<ChessPiece> pieces;
+
+	/**
+	 * The default value of the '{@link #getPiecesLeft() <em>Pieces Left</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPiecesLeft()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int PIECES_LEFT_EDEFAULT = 0;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,6 +182,15 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 */
+	@Override
+	public int getPiecesLeft() {
+		return this.getPieces().size();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -211,6 +231,8 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 			return getColor();
 		case Ass2Package.PLAYER__PIECES:
 			return getPieces();
+		case Ass2Package.PLAYER__PIECES_LEFT:
+			return getPiecesLeft();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -273,6 +295,8 @@ public class PlayerImpl extends MinimalEObjectImpl.Container implements Player {
 			return color != COLOR_EDEFAULT;
 		case Ass2Package.PLAYER__PIECES:
 			return pieces != null && !pieces.isEmpty();
+		case Ass2Package.PLAYER__PIECES_LEFT:
+			return getPiecesLeft() != PIECES_LEFT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ass2:Game xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ass2="http://www.ntnu.no/tdt4250/ass2">
   <board>
-    <whitePieces y="1" player="//@lobby/@playerOne" name="Pawn"/>
+    <whitePieces y="1" name="Pawn">
+      <moves canMoveOnly="true"/>
+    </whitePieces>
   </board>
   <lobby>
-    <playerOne name="PlayerOne" pieces="//@board/@whitePieces.0"/>
-    <playerTwo name="PlayerTwo" color="BLACK"/>
+    <playerOne name="PlayerOne"/>
+    <playerTwo name="PlayerTwo"/>
   </lobby>
 </ass2:Game>

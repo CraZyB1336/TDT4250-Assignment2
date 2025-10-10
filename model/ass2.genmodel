@@ -66,6 +66,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/canCapture"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/canMoveOnly"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/firstMoveOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/canCaptureOnly"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

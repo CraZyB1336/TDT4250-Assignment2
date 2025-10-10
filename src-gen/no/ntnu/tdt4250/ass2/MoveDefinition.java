@@ -20,10 +20,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanCapture <em>Can Capture</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanMoveOnly <em>Can Move Only</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#isFirstMoveOnly <em>First Move Only</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanCaptureOnly <em>Can Capture Only</em>}</li>
  * </ul>
  *
  * @see no.ntnu.tdt4250.ass2.Ass2Package#getMoveDefinition()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='IsMoveOnlyAndCanCaptureCantBothBeTrue'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='IsMoveOnlyAndCanCaptureCantBothBeTrue CanCaptureAndIsCaptureOnlyMustBeSameValue'"
  * @generated
  */
 public interface MoveDefinition extends EObject {
@@ -182,5 +183,27 @@ public interface MoveDefinition extends EObject {
 	 * @generated
 	 */
 	void setFirstMoveOnly(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Can Capture Only</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Can Capture Only</em>' attribute.
+	 * @see #setCanCaptureOnly(boolean)
+	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getMoveDefinition_CanCaptureOnly()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isCanCaptureOnly();
+
+	/**
+	 * Sets the value of the '{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanCaptureOnly <em>Can Capture Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Can Capture Only</em>' attribute.
+	 * @see #isCanCaptureOnly()
+	 * @generated
+	 */
+	void setCanCaptureOnly(boolean value);
 
 } // MoveDefinition

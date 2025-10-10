@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.MoveDefinitionImpl#isCanCapture <em>Can Capture</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.MoveDefinitionImpl#isCanMoveOnly <em>Can Move Only</em>}</li>
  *   <li>{@link no.ntnu.tdt4250.ass2.impl.MoveDefinitionImpl#isFirstMoveOnly <em>First Move Only</em>}</li>
+ *   <li>{@link no.ntnu.tdt4250.ass2.impl.MoveDefinitionImpl#isCanCaptureOnly <em>Can Capture Only</em>}</li>
  * </ul>
  *
  * @generated
@@ -171,6 +172,26 @@ public class MoveDefinitionImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected boolean firstMoveOnly = FIRST_MOVE_ONLY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isCanCaptureOnly() <em>Can Capture Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanCaptureOnly()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean CAN_CAPTURE_ONLY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isCanCaptureOnly() <em>Can Capture Only</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isCanCaptureOnly()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean canCaptureOnly = CAN_CAPTURE_ONLY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -365,6 +386,30 @@ public class MoveDefinitionImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
+	public boolean isCanCaptureOnly() {
+		return canCaptureOnly;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCanCaptureOnly(boolean newCanCaptureOnly) {
+		boolean oldCanCaptureOnly = canCaptureOnly;
+		canCaptureOnly = newCanCaptureOnly;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Ass2Package.MOVE_DEFINITION__CAN_CAPTURE_ONLY,
+					oldCanCaptureOnly, canCaptureOnly));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Ass2Package.MOVE_DEFINITION__MOVE_X:
@@ -381,6 +426,8 @@ public class MoveDefinitionImpl extends MinimalEObjectImpl.Container implements 
 			return isCanMoveOnly();
 		case Ass2Package.MOVE_DEFINITION__FIRST_MOVE_ONLY:
 			return isFirstMoveOnly();
+		case Ass2Package.MOVE_DEFINITION__CAN_CAPTURE_ONLY:
+			return isCanCaptureOnly();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -413,6 +460,9 @@ public class MoveDefinitionImpl extends MinimalEObjectImpl.Container implements 
 			return;
 		case Ass2Package.MOVE_DEFINITION__FIRST_MOVE_ONLY:
 			setFirstMoveOnly((Boolean) newValue);
+			return;
+		case Ass2Package.MOVE_DEFINITION__CAN_CAPTURE_ONLY:
+			setCanCaptureOnly((Boolean) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -447,6 +497,9 @@ public class MoveDefinitionImpl extends MinimalEObjectImpl.Container implements 
 		case Ass2Package.MOVE_DEFINITION__FIRST_MOVE_ONLY:
 			setFirstMoveOnly(FIRST_MOVE_ONLY_EDEFAULT);
 			return;
+		case Ass2Package.MOVE_DEFINITION__CAN_CAPTURE_ONLY:
+			setCanCaptureOnly(CAN_CAPTURE_ONLY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -473,6 +526,8 @@ public class MoveDefinitionImpl extends MinimalEObjectImpl.Container implements 
 			return canMoveOnly != CAN_MOVE_ONLY_EDEFAULT;
 		case Ass2Package.MOVE_DEFINITION__FIRST_MOVE_ONLY:
 			return firstMoveOnly != FIRST_MOVE_ONLY_EDEFAULT;
+		case Ass2Package.MOVE_DEFINITION__CAN_CAPTURE_ONLY:
+			return canCaptureOnly != CAN_CAPTURE_ONLY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -502,6 +557,8 @@ public class MoveDefinitionImpl extends MinimalEObjectImpl.Container implements 
 		result.append(canMoveOnly);
 		result.append(", firstMoveOnly: ");
 		result.append(firstMoveOnly);
+		result.append(", canCaptureOnly: ");
+		result.append(canCaptureOnly);
 		result.append(')');
 		return result.toString();
 	}

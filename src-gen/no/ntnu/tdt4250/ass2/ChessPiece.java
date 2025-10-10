@@ -173,7 +173,7 @@ public interface ChessPiece extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Moves</em>' containment reference list.
 	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getChessPiece_Moves()
-	 * @model containment="true" required="true" derived="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<MoveDefinition> getMoves();

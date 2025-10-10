@@ -403,6 +403,9 @@ public class Ass2Validator extends EObjectValidator {
 		if (result || diagnostics != null)
 			result &= validateMoveDefinition_IsMoveOnlyAndCanCaptureCantBothBeTrue(moveDefinition, diagnostics,
 					context);
+		if (result || diagnostics != null)
+			result &= validateMoveDefinition_CanCaptureAndIsCaptureOnlyMustBeSameValue(moveDefinition, diagnostics,
+					context);
 		return result;
 	}
 
@@ -424,6 +427,31 @@ public class Ass2Validator extends EObjectValidator {
 				diagnostics.add(createDiagnostic(
 						Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic", new Object[] {
 								"IsMoveOnlyAndCanCaptureCantBothBeTrue", getObjectLabel(moveDefinition, context) },
+						new Object[] { moveDefinition }, context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Validates the CanCaptureAndIsCaptureOnlyMustBeSameValue constraint of '<em>Move Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public boolean validateMoveDefinition_CanCaptureAndIsCaptureOnlyMustBeSameValue(MoveDefinition moveDefinition,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean valid = true;
+		
+		if (moveDefinition.isCanCapture() != moveDefinition.isCanCaptureOnly()) {
+			valid = false;
+		}
+		
+		if (!valid) {
+			if (diagnostics != null) {
+				diagnostics.add(createDiagnostic(
+						Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic", new Object[] {
+								"CanCaptureAndIsCaptureOnlyMustBeSameValue", getObjectLabel(moveDefinition, context) },
 						new Object[] { moveDefinition }, context));
 			}
 			return false;

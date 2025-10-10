@@ -10,9 +10,10 @@ import no.ntnu.tdt4250.ass2.ChessPiece;
 import no.ntnu.tdt4250.ass2.MoveDefinition;
 import no.ntnu.tdt4250.ass2.Player;
 import no.ntnu.tdt4250.ass2.PlayerColor;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.BasicEList;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -20,6 +21,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -387,16 +390,15 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
 	 */
 	@Override
 	public EList<MoveDefinition> getMoves() {
-		EList<MoveDefinition> validMoves = new BasicEList<>();
-
-		// TODO
-		// When integrating this in the actual system, find current board in Singletons or other managers
-		// Calculate valid moves based on flags and current game state (First turn, Standard turn).
-
-		return validMoves;
+		if (moves == null) {
+			moves = new EObjectContainmentEList<MoveDefinition>(MoveDefinition.class, this,
+					Ass2Package.CHESS_PIECE__MOVES);
+		}
+		return moves;
 	}
 
 	/**

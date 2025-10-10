@@ -515,13 +515,22 @@ public interface Ass2Package extends EPackage {
 	int MOVE_DEFINITION__FIRST_MOVE_ONLY = 6;
 
 	/**
+	 * The feature id for the '<em><b>Can Capture Only</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MOVE_DEFINITION__CAN_CAPTURE_ONLY = 7;
+
+	/**
 	 * The number of structural features of the '<em>Move Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MOVE_DEFINITION_FEATURE_COUNT = 7;
+	int MOVE_DEFINITION_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Move Definition</em>' class.
@@ -974,6 +983,17 @@ public interface Ass2Package extends EPackage {
 	EAttribute getMoveDefinition_FirstMoveOnly();
 
 	/**
+	 * Returns the meta object for the attribute '{@link no.ntnu.tdt4250.ass2.MoveDefinition#isCanCaptureOnly <em>Can Capture Only</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Can Capture Only</em>'.
+	 * @see no.ntnu.tdt4250.ass2.MoveDefinition#isCanCaptureOnly()
+	 * @see #getMoveDefinition()
+	 * @generated
+	 */
+	EAttribute getMoveDefinition_CanCaptureOnly();
+
+	/**
 	 * Returns the meta object for enum '{@link no.ntnu.tdt4250.ass2.BoardType <em>Board Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1343,6 +1363,14 @@ public interface Ass2Package extends EPackage {
 		 * @generated
 		 */
 		EAttribute MOVE_DEFINITION__FIRST_MOVE_ONLY = eINSTANCE.getMoveDefinition_FirstMoveOnly();
+
+		/**
+		 * The meta object literal for the '<em><b>Can Capture Only</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MOVE_DEFINITION__CAN_CAPTURE_ONLY = eINSTANCE.getMoveDefinition_CanCaptureOnly();
 
 		/**
 		 * The meta object literal for the '{@link no.ntnu.tdt4250.ass2.BoardType <em>Board Type</em>}' enum.

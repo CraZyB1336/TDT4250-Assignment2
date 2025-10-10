@@ -561,6 +561,16 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getMoveDefinition_CanCaptureOnly() {
+		return (EAttribute) moveDefinitionEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getBoardType() {
 		return boardTypeEEnum;
 	}
@@ -659,6 +669,7 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__CAN_CAPTURE);
 		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__CAN_MOVE_ONLY);
 		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__FIRST_MOVE_ONLY);
+		createEAttribute(moveDefinitionEClass, MOVE_DEFINITION__CAN_CAPTURE_ONLY);
 
 		// Create enums
 		boardTypeEEnum = createEEnum(BOARD_TYPE);
@@ -754,7 +765,7 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getChessPiece_Moves(), this.getMoveDefinition(), null, "moves", null, 1, -1, ChessPiece.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(abilityEClass, Ability.class, "Ability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbility_Name(), ecorePackage.getEString(), "name", null, 1, 1, Ability.class, !IS_TRANSIENT,
@@ -792,6 +803,9 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		initEAttribute(getMoveDefinition_FirstMoveOnly(), ecorePackage.getEBoolean(), "firstMoveOnly", null, 1, 1,
 				MoveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMoveDefinition_CanCaptureOnly(), ecorePackage.getEBoolean(), "canCaptureOnly", null, 1, 1,
+				MoveDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(boardTypeEEnum, BoardType.class, "BoardType");
@@ -827,8 +841,8 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		addAnnotation(lobbyEClass, source,
 				new String[] { "constraints", "PlayerOneAndPlayerTwoMustHaveOppositeColor" });
 		addAnnotation(chessPieceEClass, source, new String[] { "constraints", "PieceColorMustBeSameAsPlayer" });
-		addAnnotation(moveDefinitionEClass, source,
-				new String[] { "constraints", "IsMoveOnlyAndCanCaptureCantBothBeTrue" });
+		addAnnotation(moveDefinitionEClass, source, new String[] { "constraints",
+				"IsMoveOnlyAndCanCaptureCantBothBeTrue CanCaptureAndIsCaptureOnlyMustBeSameValue" });
 	}
 
 } //Ass2PackageImpl

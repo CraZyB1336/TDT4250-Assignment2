@@ -1,190 +1,81 @@
-# Project Name
+# Assignment 2 ECore Model
+# Chess Evolved Board Setup Model
 
-A brief, compelling description of what your project does and why it exists.
+Setting up a chess board can be quite tiresome manually, specially in terms of implementing data where needed and overall structure.
+Thus this Board Setup Metamodel defines the rules of how you can setup a chess board with customization features such as board size and custom chess pieces.
+
+When it comes where this model is supposed to be placed please read the Domain section of this README.
 
 ## Table of Contents
 
 - [Repository Structure](#repository-structure)
 - [Domain](#domain)
 
-## Features
-
-- Key feature 1
-- Key feature 2
-- Key feature 3
-- Any unique selling points
-
-## Installation
-
-### Prerequisites
-
-- Node.js >= 14.0.0
-- npm >= 6.0.0
-- Other dependencies or system requirements
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/username/project-name.git
-
-# Navigate to project directory
-cd project-name
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env
-
-# Run initial setup (if needed)
-npm run setup
-```
-
-## Usage
-
-### Basic Example
-
-```javascript
-// Quick start example
-import { Module } from 'project-name';
-
-const instance = new Module();
-instance.doSomething();
-```
-
-### Advanced Usage
-
-Provide more detailed examples, common use cases, or link to additional documentation.
-
 ## Repository Structure
+
+When it comes to naming scheme, It was too late to realize that the model itself would be named as "ass2".
+But I did find it quite humourous in the end. But originally the name for the model should've been chessGame.
 
 ```
 .
-├── src/                    # Source files
-│   ├── components/         # Reusable components
-│   ├── services/           # Business logic and services
-│   ├── utils/              # Utility functions
-│   ├── models/             # Data models
-│   └── index.js            # Main entry point
-├── tests/                  # Test files
-│   ├── unit/               # Unit tests
-│   ├── integration/        # Integration tests
-│   └── e2e/                # End-to-end tests
-├── docs/                   # Documentation files
-│   ├── api/                # API documentation
-│   ├── guides/             # User guides
-│   └── architecture.md     # Architecture overview
-├── config/                 # Configuration files
-│   ├── development.json    # Development config
-│   ├── production.json     # Production config
-│   └── test.json           # Test config
-├── scripts/                # Build and deployment scripts
-├── public/                 # Static assets
-├── .github/                # GitHub specific files
-│   ├── workflows/          # CI/CD workflows
-│   └── ISSUE_TEMPLATE/     # Issue templates
-├── .env.example            # Example environment variables
-├── .gitignore              # Git ignore rules
-├── package.json            # Project dependencies
-├── README.md               # This file
-└── LICENSE                 # License information
+├── src-gen/                # Generated Source Files based on the ECore model
+│   ├── util/               # Utilities generated such as Validator
+│   ├── impl/               # Direct implementations of the interfaces
+│   ├── Ability.java/       # Interface for the Ability Class
+│   . 
+│   .                       # The other classes here are also interfaces or enums
+│   .
+│   └── PlayerColor.java    # Enumerator for Player Colors
+│   
+├── model/                  # The folder containing the ECore model and generator
+│   ├── ass2.aird             
+│   ├── ass2.ecore          # The ECore model xml
+│   └── ass2.genmode        # The XML file to generate the model to java code
+│
+└── examples/               # Examples of products derived from the Model
+    ├── ClassicChess.ass2   # A model definition of the classic chess setup
+    └── FantasyChess.ass2   # A model definition of a fantasy esque chess setup
+
 ```
+## Domain
 
-### Key Directories
+### Domain Description: Chess Evolved
 
-**src/** - Contains all source code for the application
-- `components/` - Modular, reusable components
-- `services/` - Business logic and external service integrations
-- `utils/` - Helper functions and utilities
-- `models/` - Data structures and schemas
+This metamodel defines the structure for Chess Evolved, which is a customizable chess variant system that extends traditional chess with configurable board rules, pieces, piece abilities, and custom movement patterns for the pieces.
 
-**tests/** - All testing files organized by test type
-- Unit tests for individual functions
-- Integration tests for component interactions
-- End-to-end tests for full user workflows
+### What is Chess Evolved?
 
-**docs/** - Comprehensive project documentation
-- API reference documentation
-- User guides and tutorials
-- Architecture decisions and diagrams
+Chess Evolved transforms classic chess by allowing players to customize board sizes (8x8 to 16x16), game modes (Classic, Fog of War), piece types, and special abilites. The system supports creating and saving game configurations that can be loaded into the Chess Evolved game system for actual gameplay.
 
-**config/** - Environment-specific configuration files
+### What Does This Metamodel Capture?
 
-## Configuration
+The metamodel represents a complete game configuration/instance, including:
+- A lobby with two players (Player One and Player Two).
+    - The lobby also supports saving a lobbyID, but in reality this would be generated by the actual system.
+- Board setup: size, game mode, and initial piece placements.
+- Custom piece definitions with their positions, colors, and movement capabilites.
+- Game state information ready to be played.
 
-Create a `.env` file in the root directory:
+### Piece Definition
 
-```env
-# Application
-NODE_ENV=development
-PORT=3000
+Each piece is characterized by:
+- Position: x, and y coordinates on the board. No two pieces can be placed on the same coordinate.
+- Name of the piece. Such as "Rook" or "Samurai" (Custom).
+- Color: White or Black.
+- Move Patterns: Reusable MoveDefinitions objects that define how the piece moves realtive to its current position using moveX and moveY offsets.
 
-# Database
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=myapp
+### Move Constraints
 
-# API Keys
-API_KEY=your_api_key_here
-SECRET_KEY=your_secret_key_here
-```
+Each move definition includes behavioral flags that determine when the move is valid during gameplay.
+- isInifinite: Flag for repeating the move until obstruction (rook, bishop).
+- canJump: Can move over pieces (knight)
+- firstMoveOnly: Only available on the first move (pawn)
+- canCapture, canMoveOnly, canCaptureOnly: Capture/Movement constriants.
 
-## Documentation
+### Abilities
 
-- [API Documentation](docs/api/README.md)
-- [User Guide](docs/guides/user-guide.md)
-- [Architecture Overview](docs/architecture.md)
-- [Changelog](CHANGELOG.md)
+Pieces can have optional abilities (Active/Passive) with cooldown mechanics that enhance gameplay with special powers.
 
-## Contributing
+### Current Status
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### Development Workflow
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Code Style
-
-- Follow the existing code style
-- Run `npm run lint` before committing
-- Write tests for new features
-- Update documentation as needed
-
-## Testing
-
-```bash
-# Run all tests
-npm test
-
-# Run unit tests
-npm run test:unit
-
-# Run integration tests
-npm run test:integration
-
-# Run with coverage
-npm run test:coverage
-```
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Contact
-
-- **Project Maintainer** - [Your Name](mailto:your.email@example.com)
-- **Project Link** - [https://github.com/username/project-name](https://github.com/username/project-name)
-- **Documentation** - [https://docs.project-name.com](https://docs.project-name.com)
-- **Issue Tracker** - [https://github.com/username/project-name/issues](https://github.com/username/project-name/issues)
-
-## Acknowledgments
-
-- List any contributors, libraries, or resources that deserve credit
-- Mention any inspiration or related projects
-- Thank those who have helped with the project
+Although this model captures the essence of Chess Evolved, it is not yet integrated to the project as for now. This metamodel only provides the structural foundation for defining game variants that will result into different playable products for the system.

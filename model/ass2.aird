@@ -5,7 +5,7 @@
     <semanticResources>ass2.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="__oskUJ67EfC5quBUWfC4tA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="__qIuwJ67EfC5quBUWfC4tA" name="ass2" repPath="#__pgcoJ67EfC5quBUWfC4tA" changeId="1760109735463">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="__qIuwJ67EfC5quBUWfC4tA" name="ass2" repPath="#__pgcoJ67EfC5quBUWfC4tA" changeId="1760110899870">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="ass2.ecore#/"/>
       </ownedRepresentationDescriptors>

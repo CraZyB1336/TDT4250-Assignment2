@@ -842,7 +842,7 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 				new String[] { "constraints", "PlayerOneAndPlayerTwoMustHaveOppositeColor" });
 		addAnnotation(chessPieceEClass, source, new String[] { "constraints", "PieceColorMustBeSameAsPlayer" });
 		addAnnotation(moveDefinitionEClass, source, new String[] { "constraints",
-				"IsMoveOnlyAndCanCaptureCantBothBeTrue CanCaptureAndIsCaptureOnlyMustBeSameValue" });
+				"IsMoveOnlyAndCanCaptureCantBothBeTrue IsCanCaptureMustBeTrueIfIsCanCaptureOnlyIsTrue" });
 	}
 
 } //Ass2PackageImpl

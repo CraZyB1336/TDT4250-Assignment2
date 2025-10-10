@@ -10,10 +10,9 @@ import no.ntnu.tdt4250.ass2.ChessPiece;
 import no.ntnu.tdt4250.ass2.MoveDefinition;
 import no.ntnu.tdt4250.ass2.Player;
 import no.ntnu.tdt4250.ass2.PlayerColor;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -21,7 +20,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -143,6 +141,16 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getMoves() <em>Moves</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMoves()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<MoveDefinition> moves;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -379,15 +387,16 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public EList<MoveDefinition> getMoves() {
-		// TODO: implement this method to return the 'Moves' containment reference list
-		// Ensure that you remove @generated or mark it @generated NOT
-		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
-		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		EList<MoveDefinition> validMoves = new BasicEList<>();
+
+		// TODO
+		// When integrating this in the actual system, find current board in Singletons or other managers
+		// Calculate valid moves based on flags and current game state (First turn, Standard turn).
+
+		return validMoves;
 	}
 
 	/**
@@ -541,7 +550,7 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 		case Ass2Package.CHESS_PIECE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		case Ass2Package.CHESS_PIECE__MOVES:
-			return !getMoves().isEmpty();
+			return moves != null && !moves.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

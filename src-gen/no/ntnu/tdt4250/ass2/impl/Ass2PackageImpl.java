@@ -753,7 +753,7 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		initEAttribute(getChessPiece_Name(), ecorePackage.getEString(), "name", null, 1, 1, ChessPiece.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getChessPiece_Moves(), this.getMoveDefinition(), null, "moves", null, 1, -1, ChessPiece.class,
-				IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				IS_DERIVED, IS_ORDERED);
 
 		initEClass(abilityEClass, Ability.class, "Ability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -827,6 +827,8 @@ public class Ass2PackageImpl extends EPackageImpl implements Ass2Package {
 		addAnnotation(lobbyEClass, source,
 				new String[] { "constraints", "PlayerOneAndPlayerTwoMustHaveOppositeColor" });
 		addAnnotation(chessPieceEClass, source, new String[] { "constraints", "PieceColorMustBeSameAsPlayer" });
+		addAnnotation(moveDefinitionEClass, source,
+				new String[] { "constraints", "IsMoveOnlyAndCanCaptureCantBothBeTrue" });
 	}
 
 } //Ass2PackageImpl

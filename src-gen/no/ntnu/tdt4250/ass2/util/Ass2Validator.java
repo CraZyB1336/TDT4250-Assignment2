@@ -153,14 +153,14 @@ public class Ass2Validator extends EObjectValidator {
 	public boolean validateBoard_BlackPiecesMustBeColorBlack(Board board, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		boolean valid = true;
-		
+
 		for (ChessPiece piece : board.getBlackPieces()) {
 			if (piece.getPieceColor() == PlayerColor.WHITE) {
 				valid = false;
 				break;
 			}
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
@@ -181,14 +181,14 @@ public class Ass2Validator extends EObjectValidator {
 	public boolean validateBoard_WhitePiecesMustBeColorWhite(Board board, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		boolean valid = true;
-		
+
 		for (ChessPiece piece : board.getWhitePieces()) {
 			if (piece.getPieceColor() == PlayerColor.BLACK) {
 				valid = false;
 				break;
 			}
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
@@ -210,27 +210,27 @@ public class Ass2Validator extends EObjectValidator {
 			Map<Object, Object> context) {
 		boolean valid = true;
 		HashSet<String> takenPositions = new HashSet<>();
-		
+
 		// Check black positions
 		for (ChessPiece piece : board.getBlackPieces()) {
 			String positionAsString = "x" + piece.getX() + "y" + piece.getY();
-			
+
 			if (takenPositions.contains(positionAsString)) {
 				valid = false;
 				break;
 			}
 		}
-		
+
 		// Check white positions
 		for (ChessPiece piece : board.getWhitePieces()) {
 			String positionAsString = "x" + piece.getX() + "y" + piece.getY();
-			
+
 			if (takenPositions.contains(positionAsString)) {
 				valid = false;
 				break;
 			}
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
@@ -288,11 +288,11 @@ public class Ass2Validator extends EObjectValidator {
 	public boolean validateLobby_PlayerOneAndPlayerTwoMustHaveOppositeColor(Lobby lobby, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		boolean valid = true;
-		
+
 		if (lobby.getPlayerOne().getColor() == lobby.getPlayerTwo().getColor()) {
 			valid = false;
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(createDiagnostic(Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0,
@@ -350,11 +350,11 @@ public class Ass2Validator extends EObjectValidator {
 	public boolean validateChessPiece_PieceColorMustBeSameAsPlayer(ChessPiece chessPiece, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		boolean valid = true;
-		
+
 		if (chessPiece.getPieceColor() != chessPiece.getPlayer().getColor()) {
 			valid = false;
 		}
-		
+
 		if (!valid) {
 			if (diagnostics != null) {
 				diagnostics.add(
@@ -383,7 +383,52 @@ public class Ass2Validator extends EObjectValidator {
 	 */
 	public boolean validateMoveDefinition(MoveDefinition moveDefinition, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(moveDefinition, diagnostics, context);
+		if (!validate_NoCircularContainment(moveDefinition, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(moveDefinition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(moveDefinition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(moveDefinition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(moveDefinition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(moveDefinition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(moveDefinition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(moveDefinition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(moveDefinition, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validateMoveDefinition_IsMoveOnlyAndCanCaptureCantBothBeTrue(moveDefinition, diagnostics,
+					context);
+		return result;
+	}
+
+	/**
+	 * Validates the IsMoveOnlyAndCanCaptureCantBothBeTrue constraint of '<em>Move Definition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 */
+	public boolean validateMoveDefinition_IsMoveOnlyAndCanCaptureCantBothBeTrue(MoveDefinition moveDefinition,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean valid = true;
+		
+		if (moveDefinition.isCanCapture() && moveDefinition.isCanMoveOnly()) {
+			valid = false;
+		}
+		
+		if (!valid) {
+			if (diagnostics != null) {
+				diagnostics.add(createDiagnostic(
+						Diagnostic.ERROR, DIAGNOSTIC_SOURCE, 0, "_UI_GenericConstraint_diagnostic", new Object[] {
+								"IsMoveOnlyAndCanCaptureCantBothBeTrue", getObjectLabel(moveDefinition, context) },
+						new Object[] { moveDefinition }, context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**

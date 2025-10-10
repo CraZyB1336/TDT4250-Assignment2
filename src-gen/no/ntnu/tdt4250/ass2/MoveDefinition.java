@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see no.ntnu.tdt4250.ass2.Ass2Package#getMoveDefinition()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='IsMoveOnlyAndCanCaptureCantBothBeTrue'"
  * @generated
  */
 public interface MoveDefinition extends EObject {

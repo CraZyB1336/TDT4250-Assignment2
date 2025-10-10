@@ -3,9 +3,7 @@
 package no.ntnu.tdt4250.ass2.util;
 
 import java.util.Map;
-import java.util.Set;
 import java.util.HashSet;
-
 import no.ntnu.tdt4250.ass2.*;
 
 import org.eclipse.emf.common.util.Diagnostic;
@@ -156,10 +154,6 @@ public class Ass2Validator extends EObjectValidator {
 	 */
 	public boolean validateBoard_BlackPiecesMustBeColorBlack(Board board, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
 		boolean valid = true;
 		
 		for (ChessPiece piece : board.getBlackPieces()) {
@@ -189,10 +183,6 @@ public class Ass2Validator extends EObjectValidator {
 	 */
 	public boolean validateBoard_WhitePiecesMustBeColorWhite(Board board, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
 		boolean valid = true;
 		
 		for (ChessPiece piece : board.getWhitePieces()) {
@@ -222,33 +212,26 @@ public class Ass2Validator extends EObjectValidator {
 	 */
 	public boolean validateBoard_AllChessPiecesMustBeOnUniqueSquares(Board board, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
 		boolean valid = true;
 		
-		// Can be worked iterated on
-		Set<String> savedCoordinates = new HashSet<>();
+		HashSet<String> takenPositions = new HashSet<>();
 		
+		// Check black piece positions
 		for (ChessPiece piece : board.getBlackPieces()) {
-			String stringedPos = "x" + piece.getX() + "y" + piece.getY();
-			if (savedCoordinates.contains(stringedPos)) {
+			String posStr = "x" + piece.getX() + "y" + piece.getY();
+			if (takenPositions.contains(posStr)) {
 				valid = false;
 				break;
 			}
-			
-			savedCoordinates.add(stringedPos);
 		}
 		
+		// Check white piece positions
 		for (ChessPiece piece : board.getWhitePieces()) {
-			String stringedPos = "x" + piece.getX() + "y" + piece.getY();
-			if (savedCoordinates.contains(stringedPos)) {
+			String posStr = "x" + piece.getX() + "y" + piece.getY();
+			if (takenPositions.contains(posStr)) {
 				valid = false;
 				break;
 			}
-			
-			savedCoordinates.add(stringedPos);
 		}
 		
 		if (!valid) {
@@ -308,15 +291,12 @@ public class Ass2Validator extends EObjectValidator {
 	 */
 	public boolean validateLobby_PlayerOneAndPlayerTwoMustHaveOppositeColor(Lobby lobby, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
 		boolean valid = true;
 		
 		if (lobby.getPlayerOne().getColor() == lobby.getPlayerTwo().getColor()) {
 			valid = false;
 		}
+		
 		
 		if (!valid) {
 			if (diagnostics != null) {
@@ -375,10 +355,6 @@ public class Ass2Validator extends EObjectValidator {
 	 */
 	public boolean validateChessPiece_PlayerColorMustBeSameAsPlayer(ChessPiece chessPiece, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
 		boolean valid = true;
 		
 		if (chessPiece.getPieceColor() != chessPiece.getPlayer().getColor()) {

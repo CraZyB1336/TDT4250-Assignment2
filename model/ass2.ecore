@@ -55,7 +55,8 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="moves" lowerBound="1" upperBound="-1"
-        eType="#//MoveDefinition" volatile="true" transient="true" derived="true"/>
+        eType="#//MoveDefinition" volatile="true" transient="true" derived="true"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pieceFlags" upperBound="-1"
         eType="#//Flags" containment="true"/>
   </eClassifiers>

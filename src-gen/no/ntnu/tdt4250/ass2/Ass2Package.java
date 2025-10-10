@@ -342,7 +342,7 @@ public interface Ass2Package extends EPackage {
 	int CHESS_PIECE__NAME = 5;
 
 	/**
-	 * The feature id for the '<em><b>Moves</b></em>' reference list.
+	 * The feature id for the '<em><b>Moves</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -839,10 +839,10 @@ public interface Ass2Package extends EPackage {
 	EAttribute getChessPiece_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link no.ntnu.tdt4250.ass2.ChessPiece#getMoves <em>Moves</em>}'.
+	 * Returns the meta object for the containment reference list '{@link no.ntnu.tdt4250.ass2.ChessPiece#getMoves <em>Moves</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Moves</em>'.
+	 * @return the meta object for the containment reference list '<em>Moves</em>'.
 	 * @see no.ntnu.tdt4250.ass2.ChessPiece#getMoves()
 	 * @see #getChessPiece()
 	 * @generated
@@ -1259,7 +1259,7 @@ public interface Ass2Package extends EPackage {
 		EAttribute CHESS_PIECE__NAME = eINSTANCE.getChessPiece_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Moves</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Moves</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

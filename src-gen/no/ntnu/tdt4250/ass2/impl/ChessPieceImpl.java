@@ -395,7 +395,7 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 	 */
 	@Override
 	public EList<MoveDefinition> getMoves() {
-		// TODO: implement this method to return the 'Moves' reference list
+		// TODO: implement this method to return the 'Moves' containment reference list
 		// Ensure that you remove @generated or mark it @generated NOT
 		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
 		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
@@ -443,6 +443,8 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 			return basicSetPlayer(null, msgs);
 		case Ass2Package.CHESS_PIECE__ABILITY:
 			return basicSetAbility(null, msgs);
+		case Ass2Package.CHESS_PIECE__MOVES:
+			return ((InternalEList<?>) getMoves()).basicRemove(otherEnd, msgs);
 		case Ass2Package.CHESS_PIECE__PIECE_FLAGS:
 			return ((InternalEList<?>) getPieceFlags()).basicRemove(otherEnd, msgs);
 		}

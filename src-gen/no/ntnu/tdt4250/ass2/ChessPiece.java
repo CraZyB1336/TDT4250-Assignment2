@@ -168,13 +168,13 @@ public interface ChessPiece extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Moves</b></em>' reference list.
+	 * Returns the value of the '<em><b>Moves</b></em>' containment reference list.
 	 * The list contents are of type {@link no.ntnu.tdt4250.ass2.MoveDefinition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Moves</em>' reference list.
+	 * @return the value of the '<em>Moves</em>' containment reference list.
 	 * @see no.ntnu.tdt4250.ass2.Ass2Package#getChessPiece_Moves()
-	 * @model required="true" transient="true" volatile="true" derived="true"
+	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
 	 * @generated
 	 */
 	EList<MoveDefinition> getMoves();

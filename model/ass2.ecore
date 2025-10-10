@@ -43,7 +43,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChessPiece">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="PlayerColorMustBeSameAsPlayer"/>
+      <details key="constraints" value="PieceColorMustBeSameAsPlayer"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -57,23 +57,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="moves" lowerBound="1" upperBound="-1"
         eType="#//MoveDefinition" volatile="true" transient="true" derived="true"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="pieceFlags" upperBound="-1"
-        eType="#//Flags" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PlayerColor">
     <eLiterals name="WHITE"/>
     <eLiterals name="BLACK" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Ability">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newAttribute" lowerBound="1"
         eType="#//AbilityType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coolDownCounter" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coolDownStartNumber" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="flags" upperBound="-1"
-        eType="#//Flags" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="triggerOnCaptureOnly" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AbilityType">
     <eLiterals name="Passive"/>
@@ -86,10 +84,11 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="canJump" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Flags">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flagName" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="canCapture" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="canMoveOnly" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstMoveOnly" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
 </ecore:EPackage>

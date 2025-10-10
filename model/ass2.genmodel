@@ -50,24 +50,22 @@
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//ChessPiece/ability"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//ChessPiece/name"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//ChessPiece/moves"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//ChessPiece/pieceFlags"/>
     </genClasses>
     <genClasses ecoreClass="ass2.ecore#//Ability">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Ability/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Ability/newAttribute"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Ability/coolDownCounter"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Ability/coolDownStartNumber"/>
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference ass2.ecore#//Ability/flags"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Ability/triggerOnCaptureOnly"/>
     </genClasses>
     <genClasses ecoreClass="ass2.ecore#//MoveDefinition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/moveX"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/moveY"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/isInfinite"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/canJump"/>
-    </genClasses>
-    <genClasses ecoreClass="ass2.ecore#//Flags">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Flags/flagName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//Flags/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/canCapture"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/canMoveOnly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ass2.ecore#//MoveDefinition/firstMoveOnly"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

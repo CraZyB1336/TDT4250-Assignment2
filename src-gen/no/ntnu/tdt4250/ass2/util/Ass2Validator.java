@@ -150,7 +150,6 @@ public class Ass2Validator extends EObjectValidator {
 	 * Validates the BlackPiecesMustBeColorBlack constraint of '<em>Board</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean validateBoard_BlackPiecesMustBeColorBlack(Board board, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
@@ -179,7 +178,6 @@ public class Ass2Validator extends EObjectValidator {
 	 * Validates the WhitePiecesMustBeColorWhite constraint of '<em>Board</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean validateBoard_WhitePiecesMustBeColorWhite(Board board, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
@@ -208,7 +206,6 @@ public class Ass2Validator extends EObjectValidator {
 	 * Validates the AllChessPiecesMustBeOnUniqueSquares constraint of '<em>Board</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean validateBoard_AllChessPiecesMustBeOnUniqueSquares(Board board, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
@@ -287,7 +284,6 @@ public class Ass2Validator extends EObjectValidator {
 	 * Validates the PlayerOneAndPlayerTwoMustHaveOppositeColor constraint of '<em>Lobby</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean validateLobby_PlayerOneAndPlayerTwoMustHaveOppositeColor(Lobby lobby, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
@@ -351,7 +347,6 @@ public class Ass2Validator extends EObjectValidator {
 	 * Validates the PlayerColorMustBeSameAsPlayer constraint of '<em>Chess Piece</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	public boolean validateChessPiece_PlayerColorMustBeSameAsPlayer(ChessPiece chessPiece, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {

@@ -391,7 +391,6 @@ public class ChessPieceImpl extends MinimalEObjectImpl.Container implements Ches
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
 	 */
 	@Override
 	public EList<MoveDefinition> getMoves() {

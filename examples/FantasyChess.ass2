@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ass2:Game xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ass2="http://www.ntnu.no/tdt4250/ass2">
+  <board boardSize="15">
+    <whitePieces x="7" player="//@lobby/@playerOne" name="Emperor">
+      <moves moveX="1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+      <moves moveY="-1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="-1" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveY="1" canCapture="true"/>
+    </whitePieces>
+    <whitePieces x="6" player="//@lobby/@playerOne" name="Samurai">
+      <moves moveX="-1" isInfinite="true" canCapture="true"/>
+      <moves moveX="1" isInfinite="true" canCapture="true"/>
+      <moves moveY="-1" isInfinite="true" canCapture="true"/>
+      <moves moveY="1" isInfinite="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+    </whitePieces>
+    <whitePieces x="8" player="//@lobby/@playerOne" name="Samurai">
+      <moves moveX="-1" isInfinite="true" canCapture="true"/>
+      <moves moveX="1" isInfinite="true" canCapture="true"/>
+      <moves moveY="-1" isInfinite="true" canCapture="true"/>
+      <moves moveY="1" isInfinite="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+    </whitePieces>
+    <whitePieces x="7" y="1" player="//@lobby/@playerOne" name="Samurai">
+      <moves moveX="-1" isInfinite="true" canCapture="true"/>
+      <moves moveX="1" isInfinite="true" canCapture="true"/>
+      <moves moveY="-1" isInfinite="true" canCapture="true"/>
+      <moves moveY="1" isInfinite="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+    </whitePieces>
+    <whitePieces x="5" player="//@lobby/@playerOne" name="Ninja">
+      <moves moveX="2" canJump="true" canCapture="true"/>
+      <moves moveX="-2" canJump="true" canCapture="true"/>
+      <moves moveY="2" canJump="true" canCapture="true"/>
+      <moves moveY="-2" canJump="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveX="1" moveY="1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+    </whitePieces>
+    <whitePieces x="4" player="//@lobby/@playerOne" name="Ninja">
+      <moves moveX="2" canJump="true" canCapture="true"/>
+      <moves moveX="-2" canJump="true" canCapture="true"/>
+      <moves moveY="2" canJump="true" canCapture="true"/>
+      <moves moveY="-2" canJump="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveX="1" moveY="1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+    </whitePieces>
+    <whitePieces x="9" player="//@lobby/@playerOne" name="Ninja">
+      <moves moveX="2" canJump="true" canCapture="true"/>
+      <moves moveX="-2" canJump="true" canCapture="true"/>
+      <moves moveY="2" canJump="true" canCapture="true"/>
+      <moves moveY="-2" canJump="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveX="1" moveY="1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+    </whitePieces>
+    <whitePieces x="10" player="//@lobby/@playerOne" name="Ninja">
+      <moves moveX="2" canJump="true" canCapture="true"/>
+      <moves moveX="-2" canJump="true" canCapture="true"/>
+      <moves moveY="2" canJump="true" canCapture="true"/>
+      <moves moveY="-2" canJump="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveX="1" moveY="1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+    </whitePieces>
+    <whitePieces x="3" player="//@lobby/@playerOne" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </whitePieces>
+    <whitePieces x="2" player="//@lobby/@playerOne" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </whitePieces>
+    <whitePieces x="1" player="//@lobby/@playerOne" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </whitePieces>
+    <whitePieces player="//@lobby/@playerOne" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </whitePieces>
+    <whitePieces x="11" player="//@lobby/@playerOne" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </whitePieces>
+    <whitePieces x="12" player="//@lobby/@playerOne" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </whitePieces>
+    <whitePieces x="13" player="//@lobby/@playerOne" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </whitePieces>
+    <whitePieces x="14" player="//@lobby/@playerOne" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </whitePieces>
+    <blackPieces x="7" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Emperor">
+      <moves moveX="1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+      <moves moveY="-1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="-1" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveY="1" canCapture="true"/>
+    </blackPieces>
+    <blackPieces x="6" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Samurai">
+      <moves moveX="-1" isInfinite="true" canCapture="true"/>
+      <moves moveX="1" isInfinite="true" canCapture="true"/>
+      <moves moveY="-1" isInfinite="true" canCapture="true"/>
+      <moves moveY="1" isInfinite="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+    </blackPieces>
+    <blackPieces x="8" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Samurai">
+      <moves moveX="-1" isInfinite="true" canCapture="true"/>
+      <moves moveX="1" isInfinite="true" canCapture="true"/>
+      <moves moveY="-1" isInfinite="true" canCapture="true"/>
+      <moves moveY="1" isInfinite="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+    </blackPieces>
+    <blackPieces x="7" y="13" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Samurai">
+      <moves moveX="-1" isInfinite="true" canCapture="true"/>
+      <moves moveX="1" isInfinite="true" canCapture="true"/>
+      <moves moveY="-1" isInfinite="true" canCapture="true"/>
+      <moves moveY="1" isInfinite="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="-1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="2" moveY="1" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="-2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="-1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="2" canCapture="true" canCaptureOnly="true"/>
+    </blackPieces>
+    <blackPieces x="5" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Ninja">
+      <moves moveX="2" canJump="true" canCapture="true"/>
+      <moves moveX="-2" canJump="true" canCapture="true"/>
+      <moves moveY="2" canJump="true" canCapture="true"/>
+      <moves moveY="-2" canJump="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveX="1" moveY="1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+    </blackPieces>
+    <blackPieces x="4" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Ninja">
+      <moves moveX="2" canJump="true" canCapture="true"/>
+      <moves moveX="-2" canJump="true" canCapture="true"/>
+      <moves moveY="2" canJump="true" canCapture="true"/>
+      <moves moveY="-2" canJump="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveX="1" moveY="1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+    </blackPieces>
+    <blackPieces x="9" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Ninja">
+      <moves moveX="2" canJump="true" canCapture="true"/>
+      <moves moveX="-2" canJump="true" canCapture="true"/>
+      <moves moveY="2" canJump="true" canCapture="true"/>
+      <moves moveY="-2" canJump="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveX="1" moveY="1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+    </blackPieces>
+    <blackPieces x="10" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Ninja">
+      <moves moveX="2" canJump="true" canCapture="true"/>
+      <moves moveX="-2" canJump="true" canCapture="true"/>
+      <moves moveY="2" canJump="true" canCapture="true"/>
+      <moves moveY="-2" canJump="true" canCapture="true"/>
+      <moves moveX="-1" moveY="1" canCapture="true"/>
+      <moves moveX="1" moveY="1" canCapture="true"/>
+      <moves moveX="-1" moveY="-1" canCapture="true"/>
+      <moves moveX="1" moveY="-1" canCapture="true"/>
+    </blackPieces>
+    <blackPieces x="3" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </blackPieces>
+    <blackPieces x="2" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </blackPieces>
+    <blackPieces x="1" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </blackPieces>
+    <blackPieces y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </blackPieces>
+    <blackPieces x="11" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </blackPieces>
+    <blackPieces x="12" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </blackPieces>
+    <blackPieces x="13" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </blackPieces>
+    <blackPieces x="14" y="14" pieceColor="BLACK" player="//@lobby/@playerTwo" name="Farmer">
+      <moves moveY="2" canCapture="true" canCaptureOnly="true"/>
+      <moves moveX="1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveX="-1" moveY="1" canMoveOnly="true" firstMoveOnly="true"/>
+      <moves moveY="1" canMoveOnly="true"/>
+    </blackPieces>
+  </board>
+  <lobby>
+    <playerOne name="PlayerOne" pieces="//@board/@whitePieces.0 //@board/@whitePieces.1 //@board/@whitePieces.2 //@board/@whitePieces.3 //@board/@whitePieces.4 //@board/@whitePieces.5 //@board/@whitePieces.6 //@board/@whitePieces.7 //@board/@whitePieces.8 //@board/@whitePieces.9 //@board/@whitePieces.10 //@board/@whitePieces.11 //@board/@whitePieces.15 //@board/@whitePieces.14 //@board/@whitePieces.13 //@board/@whitePieces.12"/>
+    <playerTwo name="PlayerTwo" color="BLACK" pieces="//@board/@blackPieces.0 //@board/@blackPieces.1 //@board/@blackPieces.2 //@board/@blackPieces.3 //@board/@blackPieces.4 //@board/@blackPieces.5 //@board/@blackPieces.6 //@board/@blackPieces.7 //@board/@blackPieces.8 //@board/@blackPieces.9 //@board/@blackPieces.10 //@board/@blackPieces.11 //@board/@blackPieces.12 //@board/@blackPieces.13 //@board/@blackPieces.14 //@board/@blackPieces.15"/>
+  </lobby>
+</ass2:Game>
